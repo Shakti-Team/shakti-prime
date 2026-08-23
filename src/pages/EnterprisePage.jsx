@@ -1,138 +1,112 @@
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Building2,
   Megaphone,
-  Sparkles,
-  Laptop,
-  CheckCircle2
+  MapPin,
+  CheckCircle2,
+  Mail,
+  ArrowRight,
+  ShieldCheck
 } from 'lucide-react';
 
 export default function EnterprisePage() {
-  const [brandName, setBrandName] = useState('Uber Safety Shield');
-  const [bannerTagline, setBannerTagline] = useState('Verified Women Drivers & In-Ride Telemetry Sync Available 24/7');
-  const [requested, setRequested] = useState(false);
-
   return (
-    <div className="pt-24 sm:pt-32 pb-20 animate-in fade-in duration-200">
+    <div className="pt-24 sm:pt-32 pb-24 min-h-screen bg-[#FAFAF9] text-gray-900 animate-in fade-in duration-200">
       
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
-        <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200 mb-3">
-            <Building2 className="w-3.5 h-3.5 text-rose-600" />
-            <span>Enterprise Suite & Ads</span>
+        <div className="text-center max-w-3xl mx-auto mb-14">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-4 py-1.5 rounded-full border border-rose-200 mb-4 shadow-xs">
+            <Building2 className="w-4 h-4 text-rose-600" />
+            <span>Dedicated Enterprise & Brand Monetization Hub</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-950 font-display tracking-tight">
-            Corporate Safety & In-App Brand Sponsorships
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-950 font-display tracking-tight">
+            Enterprise Safety & Brand Partnerships
           </h1>
-          <p className="text-sm text-gray-600 mt-2">
-            Duty-of-care transport fleet monitoring for women employees, and ethical in-app safety banner campaigns.
+          <p className="text-base sm:text-lg text-gray-600 mt-4 leading-relaxed">
+            Verified companies, restaurants, transport fleets, and brands can partner with Shakti to showcase sponsored safety banners, posters, and geo-targeted safe zone perks directly inside the Shakti App.
           </p>
         </div>
 
         {/* 2 Main Pillar Cards */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-14">
           
-          <div className="bg-white rounded-3xl p-7 border border-pink-200/80 shadow-xs space-y-4">
-            <div className="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center">
-              <Megaphone className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900">In-App Brand Safety Banners</h3>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              Verified brands (transit, healthcare, wellness, self-defense) can run high-trust, contextual safety banners inside Shakti App.
-            </p>
-            <div className="space-y-2 text-xs text-gray-700 font-medium pt-2">
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>3.8x higher CTR than generic display networks</span>
+          <div className="bg-white rounded-3xl p-7 sm:p-9 border border-gray-200/90 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center border border-rose-100 mb-6">
+                <Megaphone className="w-6 h-6" />
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-emerald-600" />
-                <span>100% brand-safe women empowerment audience</span>
+              <h3 className="text-2xl font-bold text-gray-950 font-display">In-App Verified Brand Banners</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Run targeted, contextual safety awareness banners and promotional campaigns inside Shakti App feed.
+              </p>
+              <div className="space-y-2 text-xs text-gray-700 font-semibold">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>High engagement with 100% verified women audience</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600" />
+                  <span>Contextual placement during travel & commute hours</span>
+                </div>
               </div>
             </div>
           </div>
 
-          <div className="bg-white rounded-3xl p-7 border border-pink-200/80 shadow-xs space-y-4">
-            <div className="w-10 h-10 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center">
-              <Laptop className="w-5 h-5" />
-            </div>
-            <h3 className="text-xl font-bold text-gray-900">Corporate Employee Cab Fleet Suite</h3>
-            <p className="text-xs text-gray-600 leading-relaxed">
-              Live transit dashboard for IT/BPO companies to monitor female employees' late-night cab commutes in real-time.
-            </p>
-            <div className="space-y-2 text-xs text-gray-700 font-medium pt-2">
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                <span>Automated safe home arrival check-ins</span>
+          <div className="bg-white rounded-3xl p-7 sm:p-9 border border-gray-200/90 shadow-sm space-y-4 flex flex-col justify-between hover:shadow-md transition-all">
+            <div>
+              <div className="w-12 h-12 rounded-2xl bg-blue-50 text-blue-600 flex items-center justify-center border border-blue-100 mb-6">
+                <MapPin className="w-6 h-6" />
               </div>
-              <div className="flex items-center space-x-2">
-                <CheckCircle2 className="w-4 h-4 text-blue-600" />
-                <span>Duty-of-care audit reports for HR & security</span>
+              <h3 className="text-2xl font-bold text-gray-950 font-display">Geo-Fenced Safe Zone Perks</h3>
+              <p className="text-sm text-gray-600 leading-relaxed mb-4">
+                Register your restaurant or boutique as a verified Shakti safe haven. Automatically notify nearby Shakti users of exclusive safe-zone perks!
+              </p>
+              <div className="space-y-2 text-xs text-gray-700 font-semibold">
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                  <span>Hyper-local GPS radius targeting (100m to 2000m)</span>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600" />
+                  <span>Verified Safe Haven badge for your establishment</span>
+                </div>
               </div>
             </div>
           </div>
 
         </div>
 
-        {/* Live Banner Ad Simulator */}
-        <div className="bg-white rounded-3xl p-6 sm:p-8 border border-pink-200 shadow-sm space-y-6">
-          <div className="flex items-center space-x-2">
-            <Sparkles className="w-4 h-4 text-rose-600" />
-            <h3 className="text-lg font-bold text-gray-900">Interactive Banner Ad Preview Simulator</h3>
+        {/* Clean, Elegant Contact Company Card (White background, Dark CTA button, No heavy pink!) */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border border-gray-200/90 shadow-xl text-center max-w-4xl mx-auto space-y-6">
+          <div className="w-14 h-14 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center mx-auto border border-rose-100">
+            <Mail className="w-7 h-7" />
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
-            
-            {/* Form */}
-            <div className="space-y-3">
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Company / Brand Name</label>
-                <input
-                  type="text"
-                  value={brandName}
-                  onChange={(e) => setBrandName(e.target.value)}
-                  className="w-full px-3.5 py-2 rounded-xl bg-pink-50/40 border border-pink-200 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-500"
-                  placeholder="e.g. Uber Safety, Apollo"
-                />
-              </div>
+          <h3 className="text-2xl sm:text-4xl font-extrabold text-gray-950 font-display">
+            Partner with Shakti Enterprise
+          </h3>
 
-              <div>
-                <label className="block text-xs font-bold text-gray-700 uppercase mb-1">Safety Message Headline</label>
-                <input
-                  type="text"
-                  value={bannerTagline}
-                  onChange={(e) => setBannerTagline(e.target.value)}
-                  className="w-full px-3.5 py-2 rounded-xl bg-pink-50/40 border border-pink-200 text-xs font-medium focus:outline-none focus:ring-2 focus:ring-rose-500"
-                  placeholder="e.g. 24/7 Verified Safe Rides"
-                />
-              </div>
+          <p className="text-sm sm:text-base text-gray-600 max-w-xl mx-auto leading-relaxed">
+            Interested in launching brand safety banners, registering your store as a safe haven, or acquiring enterprise safety licensing? Reach out directly to our partnerships team.
+          </p>
 
-              <button
-                onClick={() => setRequested(true)}
-                className="w-full py-2.5 bg-gray-900 hover:bg-black text-white text-xs font-bold rounded-xl transition-all shadow"
-              >
-                {requested ? '✓ Request Received! We will contact you' : 'Request Campaign Placement'}
-              </button>
-            </div>
+          <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
+            <a
+              href="mailto:enterprise@shaktiapp.in?subject=Shakti%20Enterprise%20Partnership%20Inquiry"
+              className="bg-gray-950 hover:bg-black text-white px-8 py-4 rounded-full font-bold text-sm sm:text-base shadow-md hover:scale-105 transition-all flex items-center space-x-2.5"
+            >
+              <Mail className="w-4.5 h-4.5 text-gray-300" />
+              <span>Contact Shakti Team (enterprise@shaktiapp.in)</span>
+              <ArrowRight className="w-4 h-4 text-gray-400" />
+            </a>
+          </div>
 
-            {/* Live Rendered Card */}
-            <div className="p-4 rounded-2xl bg-gradient-to-r from-rose-50 via-pink-50 to-white border border-rose-200 space-y-2">
-              <div className="flex items-center justify-between">
-                <span className="text-xs font-bold text-gray-900">{brandName || 'Brand Name'}</span>
-                <span className="text-[9px] font-bold uppercase text-rose-700 bg-rose-100 px-2 py-0.5 rounded-full">
-                  Sponsored
-                </span>
-              </div>
-              <p className="text-xs text-gray-700 font-semibold">{bannerTagline || 'Safety message here'}</p>
-              <div className="pt-2 flex items-center justify-between text-[10px] text-gray-500 border-t border-rose-100">
-                <span>Verified Shakti Partner</span>
-                <span className="text-rose-600 font-bold">Learn More ➔</span>
-              </div>
-            </div>
-
+          <div className="pt-2 text-xs text-gray-500 font-mono flex items-center justify-center space-x-2">
+            <ShieldCheck className="w-4 h-4 text-emerald-600" />
+            <span>Our enterprise partnership team responds within 24 hours</span>
           </div>
         </div>
 

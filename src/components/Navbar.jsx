@@ -7,7 +7,9 @@ import {
   Smartphone,
   Mic,
   Radio,
-  ArrowRight
+  ArrowRight,
+  UserCheck,
+  Award
 } from 'lucide-react';
 
 export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) {
@@ -18,37 +20,8 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
     setMobileMenuOpen(false);
     setProductsDropdownOpen(false);
 
-    if (sectionId) {
+    if (sectionId && currentPage === 'home') {
       const el = document.getElementById(sectionId);
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
-
-    if (page === 'home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-      setCurrentPage('home');
-      return;
-    }
-
-    // Scroll to corresponding section on main page if present
-    if (page === 'products') {
-      const el = document.getElementById('shakti-2');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
-    if (page === 'pricing') {
-      const el = document.getElementById('pricing');
-      if (el) {
-        el.scrollIntoView({ behavior: 'smooth' });
-        return;
-      }
-    }
-    if (page === 'enterprise') {
-      const el = document.getElementById('shakti-sdk');
       if (el) {
         el.scrollIntoView({ behavior: 'smooth' });
         return;
@@ -57,6 +30,13 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
 
     setCurrentPage(page);
     window.scrollTo({ top: 0, behavior: 'smooth' });
+
+    if (sectionId) {
+      setTimeout(() => {
+        const el = document.getElementById(sectionId);
+        if (el) el.scrollIntoView({ behavior: 'smooth' });
+      }, 150);
+    }
   };
 
   return (
@@ -113,22 +93,22 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
 
                 {/* Dropdown Menu */}
                 {productsDropdownOpen && (
-                  <div className="absolute top-full left-0 mt-1 w-[520px] bg-white rounded-3xl shadow-2xl border border-gray-200/90 p-6 animate-in fade-in slide-in-from-top-2 duration-150 z-50 text-left">
+                  <div className="absolute top-full left-0 mt-1 w-[540px] bg-white rounded-3xl shadow-2xl border border-gray-200/90 p-6 animate-in fade-in slide-in-from-top-2 duration-150 z-50 text-left">
                     <div className="grid grid-cols-12 gap-5 items-start">
                       
                       {/* Left Side */}
                       <div className="col-span-5 space-y-3 border-r border-gray-100 pr-4">
                         <h4 className="text-lg font-bold text-gray-950 font-display leading-snug">
-                          Shakti Safety Suite
+                          Shakti Safety Harness
                         </h4>
                         <p className="text-xs text-gray-500 leading-relaxed">
-                          Autonomous AI protection and instant emergency dispatch.
+                          Autonomous AI protection, parent rules & verified safe communities.
                         </p>
                         <button
                           onClick={() => navigateTo('products')}
                           className="inline-flex items-center space-x-1.5 text-xs font-bold text-gray-900 bg-gray-100 hover:bg-gray-200 px-3.5 py-1.5 rounded-full transition-colors"
                         >
-                          <span>Explore all</span>
+                          <span>Explore product suite</span>
                           <ArrowRight className="w-3 h-3" />
                         </button>
                       </div>
@@ -136,20 +116,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
                       {/* Right Side Items */}
                       <div className="col-span-7 space-y-2">
                         <button 
-                          onClick={() => navigateTo('home', 'shakti-2')}
-                          className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-rose-50/60 transition-colors group"
-                        >
-                          <div className="w-7 h-7 rounded-lg bg-rose-50 text-rose-600 flex items-center justify-center shrink-0">
-                            <Smartphone className="w-3.5 h-3.5" />
-                          </div>
-                          <div>
-                            <div className="text-xs font-bold text-gray-900 group-hover:text-rose-600">Shakti Mobile 2.0</div>
-                            <div className="text-[10px] text-gray-500">Autonomous SOS & Guard</div>
-                          </div>
-                        </button>
-
-                        <button 
-                          onClick={() => navigateTo('home', 'sentinel-ai')}
+                          onClick={() => navigateTo('home', 'voice-sentinel')}
                           className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-pink-50/60 transition-colors group"
                         >
                           <div className="w-7 h-7 rounded-lg bg-pink-50 text-pink-600 flex items-center justify-center shrink-0">
@@ -162,15 +129,28 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
                         </button>
 
                         <button 
-                          onClick={() => navigateTo('home', 'guardian-mesh')}
+                          onClick={() => navigateTo('home', 'parenting-suite')}
                           className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-blue-50/60 transition-colors group"
                         >
                           <div className="w-7 h-7 rounded-lg bg-blue-50 text-blue-600 flex items-center justify-center shrink-0">
-                            <Radio className="w-3.5 h-3.5" />
+                            <UserCheck className="w-3.5 h-3.5" />
                           </div>
                           <div>
-                            <div className="text-xs font-bold text-gray-900 group-hover:text-blue-600">Guardian Mesh</div>
-                            <div className="text-[10px] text-gray-500">Offline SOS & Telemetry</div>
+                            <div className="text-xs font-bold text-gray-900 group-hover:text-blue-600">Parenting & Student Sentinel</div>
+                            <div className="text-[10px] text-gray-500">Guardian Dashboard & Geofencing</div>
+                          </div>
+                        </button>
+
+                        <button 
+                          onClick={() => navigateTo('home', 'empowerment-hub')}
+                          className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-purple-50/60 transition-colors group"
+                        >
+                          <div className="w-7 h-7 rounded-lg bg-purple-50 text-purple-600 flex items-center justify-center shrink-0">
+                            <Award className="w-3.5 h-3.5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-gray-900 group-hover:text-purple-600">Self Improvement Hub</div>
+                            <div className="text-[10px] text-gray-500">Make Friends & Empowerment</div>
                           </div>
                         </button>
                       </div>
@@ -180,10 +160,14 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
                 )}
               </div>
 
-              {/* Pricing Link */}
+              {/* Pricing Dedicated Page Link */}
               <button
-                onClick={() => navigateTo('home', 'pricing')}
-                className="px-3.5 py-1.5 rounded-full transition-colors flex items-center space-x-1.5 text-gray-700 hover:text-gray-950 hover:bg-gray-50"
+                onClick={() => navigateTo('pricing')}
+                className={`px-3.5 py-1.5 rounded-full transition-colors flex items-center space-x-1.5 ${
+                  currentPage === 'pricing'
+                    ? 'bg-rose-50 text-rose-700 font-bold'
+                    : 'text-gray-700 hover:text-gray-950 hover:bg-gray-50'
+                }`}
               >
                 <span>Pricing</span>
                 <span className="text-[10px] font-bold text-rose-600 bg-rose-100/80 px-1.5 py-0.2 rounded-full">
@@ -193,10 +177,14 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
 
               {/* Enterprise Link */}
               <button
-                onClick={() => navigateTo('home', 'shakti-sdk')}
-                className="px-3.5 py-1.5 rounded-full transition-colors text-gray-700 hover:text-gray-950 hover:bg-gray-50"
+                onClick={() => navigateTo('enterprise')}
+                className={`px-3.5 py-1.5 rounded-full transition-colors ${
+                  currentPage === 'enterprise'
+                    ? 'bg-gray-100 text-gray-950 font-bold'
+                    : 'text-gray-700 hover:text-gray-950 hover:bg-gray-50'
+                }`}
               >
-                SDK & Enterprise
+                Enterprise & Brand Perks
               </button>
             </nav>
           </div>
@@ -237,20 +225,20 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
             onClick={() => navigateTo('products')}
             className={`w-full text-left px-3 py-2 rounded-xl ${currentPage === 'products' ? 'bg-gray-100 font-bold' : 'hover:bg-gray-50'}`}
           >
-            Products
+            Products Suite
           </button>
           <button 
             onClick={() => navigateTo('pricing')}
             className={`w-full text-left px-3 py-2 rounded-xl flex items-center justify-between ${currentPage === 'pricing' ? 'bg-rose-50 text-rose-700 font-bold' : 'hover:bg-gray-50'}`}
           >
-            <span>Pricing</span>
+            <span>Dedicated Pricing</span>
             <span className="text-xs bg-rose-100 text-rose-700 px-2 py-0.5 rounded-full font-bold">₹49/mo</span>
           </button>
           <button 
             onClick={() => navigateTo('enterprise')}
             className={`w-full text-left px-3 py-2 rounded-xl ${currentPage === 'enterprise' ? 'bg-gray-100 font-bold' : 'hover:bg-gray-50'}`}
           >
-            Enterprise & Ads
+            Enterprise & Brand Perks
           </button>
 
           <div className="pt-2">
@@ -259,7 +247,7 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
               className="w-full flex items-center justify-center space-x-2 bg-gray-900 text-white py-2.5 rounded-xl font-bold text-sm"
             >
               <Download className="w-4 h-4" />
-              <span>Download Shakti Free</span>
+              <span>Download Shakti App</span>
             </button>
           </div>
         </div>

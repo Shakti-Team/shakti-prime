@@ -6,37 +6,12 @@ export default function Footer({ onOpenPrivacy, onOpenDownload, onNavigatePage }
   return (
     <footer className="relative z-10 bg-white border-t border-gray-200/80 pt-16 pb-10 overflow-hidden">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        
-        {/* Emergency Helplines Callout */}
-        <div className="mb-14 bg-rose-50/70 border border-rose-200/80 rounded-2xl p-4 sm:p-5 flex flex-wrap items-center justify-between gap-4">
-          <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-xl bg-rose-600 text-white flex items-center justify-center font-bold">
-              <Phone className="w-4 h-4" />
-            </div>
-            <div>
-              <h4 className="text-xs font-bold text-gray-900">National Emergency Helplines (24/7 Direct Relay)</h4>
-              <p className="text-[11px] text-gray-600">Immediate access for distress & safety</p>
-            </div>
-          </div>
-
-          <div className="flex flex-wrap items-center gap-2 font-mono text-xs font-bold">
-            <a href="tel:112" className="bg-white text-rose-700 px-3 py-1 rounded-lg border border-rose-200 shadow-2xs hover:bg-rose-50 transition-colors">
-              🚨 112
-            </a>
-            <a href="tel:1091" className="bg-white text-rose-700 px-3 py-1 rounded-lg border border-rose-200 shadow-2xs hover:bg-rose-50 transition-colors">
-              🛡️ 1091
-            </a>
-            <a href="tel:1090" className="bg-white text-rose-700 px-3 py-1 rounded-lg border border-rose-200 shadow-2xs hover:bg-rose-50 transition-colors">
-              📞 1090
-            </a>
-          </div>
-        </div>
 
         {/* Multi-column Quick Links */}
         <div className="grid grid-cols-2 sm:grid-cols-4 gap-8 pb-12 text-sm font-medium text-gray-600">
           <div className="space-y-3">
             <div className="text-xs font-bold text-gray-900 uppercase tracking-wider">Product</div>
-            <div><button onClick={() => onNavigatePage && onNavigatePage('products')} className="hover:text-gray-950 transition-colors">Shakti Mobile 2.0</button></div>
+            <div><button onClick={() => onNavigatePage && onNavigatePage('products')} className="hover:text-gray-950 transition-colors">Shakti App</button></div>
             <div><button onClick={() => onNavigatePage && onNavigatePage('products')} className="hover:text-gray-950 transition-colors">Voice Sentinel AI</button></div>
             <div><button onClick={() => onNavigatePage && onNavigatePage('products')} className="hover:text-gray-950 transition-colors">Guardian Mesh</button></div>
           </div>

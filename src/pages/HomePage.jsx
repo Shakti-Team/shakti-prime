@@ -2,14 +2,11 @@ import React from 'react';
 import { Smartphone } from 'lucide-react';
 import KineticGridCanvas from '../components/KineticGridCanvas';
 import HeroAppShowcase from '../components/HeroAppShowcase';
-import DualAudienceSection from '../components/DualAudienceSection';
 import AntigravityProductShowcase from '../components/AntigravityProductShowcase';
 import PersonaVideoCarousel from '../components/PersonaVideoCarousel';
 import LatestBlogsSection from '../components/LatestBlogsSection';
-import PricingSection from '../components/PricingSection';
-import EnterpriseAdsSection from '../components/EnterpriseAdsSection';
 
-export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy }) {
+export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigatePricing }) {
   
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -60,7 +57,7 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy })
             </button>
 
             <button
-              onClick={() => scrollToSection('shakti-2')}
+              onClick={() => scrollToSection('shakti-features')}
               className="flex items-center space-x-2 bg-gray-50/90 hover:bg-gray-100 text-gray-800 px-6 py-3.5 rounded-full font-semibold text-sm sm:text-base border border-gray-200/80 shadow-xs hover:shadow transition-all"
             >
               <span>Explore features</span>
@@ -76,31 +73,21 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy })
 
       </div>
 
-      {/* Dual Audience Section with Swirling Kinetic Vortex background (Matching Reference Image 1) */}
-      <DualAudienceSection 
-        onOpenDownload={onOpenDownload}
-        onNavigateEnterprise={() => scrollToSection('shakti-sdk')}
-      />
-
-      {/* The 5 Showcase Sections: Manifesto, Shakti 2.0, Voice Sentinel AI, Guardian Mesh CLI, Shakti SDK */}
+      {/* The 4 Real Shakti Feature Showcase Sections: Voice Sentinel AI, Parenting & Child Protection, Safe Social Hub, Community & Self Improvement */}
       <AntigravityProductShowcase 
         onOpenDownload={onOpenDownload}
+        onOpenVideo={onOpenVideo}
       />
 
-      {/* Persona Video Stories Carousel (Matching Reference Images 3, 4, 5) */}
+      {/* Persona Video Stories Carousel */}
       <PersonaVideoCarousel onOpenVideo={onOpenVideo} />
 
-      {/* Latest Blogs & Releases Section (Matching Reference Image 2) */}
-      <LatestBlogsSection onOpenPrivacy={onOpenPrivacy} />
-
-      {/* Integrated Pricing Section */}
-      <PricingSection onOpenDownload={onOpenDownload} />
-
-      {/* Integrated Enterprise & Campus Shield Section */}
-      <EnterpriseAdsSection onOpenDownload={onOpenDownload} />
+      {/* Latest Blogs & Releases Section — temporarily hidden */}
+      {/* <LatestBlogsSection onOpenPrivacy={onOpenPrivacy} /> */}
 
     </div>
   );
 }
+
 
 

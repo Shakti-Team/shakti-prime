@@ -70,3 +70,60 @@
 .animate-radar {
   animation: radarPing 2s cubic-bezier(0, 0, 0.2, 1) infinite;
 }
+
+/* 3D Slow Continuous Y-Axis Rotation */
+@keyframes rotate3d {
+  0%   { transform: perspective(800px) rotateY(-18deg) rotateX(4deg); }
+  50%  { transform: perspective(800px) rotateY(18deg)  rotateX(-4deg); }
+  100% { transform: perspective(800px) rotateY(-18deg) rotateX(4deg); }
+}
+
+.animate-rotate3d {
+  animation: rotate3d 7s ease-in-out infinite;
+  transform-style: preserve-3d;
+}
+
+/* Smooth Vertical Float */
+@keyframes floatY {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+.animate-float {
+  animation: floatY 4s ease-in-out infinite;
+}
+
+/* Shimmer highlight sweep */
+@keyframes shimmer {
+  0%   { transform: translateX(-100%) skewX(-15deg); }
+  100% { transform: translateX(200%) skewX(-15deg); }
+}
+
+.animate-shimmer::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(90deg, transparent 0%, rgba(255,255,255,0.35) 50%, transparent 100%);
+  animation: shimmer 2.8s ease-in-out infinite;
+}
+
+/* Icon 3D flip spin */
+@keyframes icon3dSpin {
+  0%   { transform: perspective(400px) rotateY(0deg); }
+  100% { transform: perspective(400px) rotateY(360deg); }
+}
+
+.animate-icon3d {
+  animation: icon3dSpin 4s linear infinite;
+  transform-style: preserve-3d;
+}
+
+/* Slow icon pendulum */
+@keyframes iconPendulum {
+  0%, 100% { transform: perspective(400px) rotateY(-25deg) rotateX(8deg) scale(1.05); }
+  50%       { transform: perspective(400px) rotateY(25deg) rotateX(-8deg) scale(1); }
+}
+
+.animate-icon-pendulum {
+  animation: iconPendulum 5s ease-in-out infinite;
+}

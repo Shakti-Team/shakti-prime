@@ -1,381 +1,390 @@
+import React from 'react';
 import { 
-  Folder, 
-  ChevronDown, 
   Mic, 
-  GitBranch, 
-  Monitor, 
-  FileCode, 
-  FileText 
+  UserCheck, 
+  Users, 
+  Award, 
+  Sparkles, 
+  Download,
+  CheckCircle2,
+  ShieldAlert,
+  MapPin,
+  MessageSquare,
+  Activity,
+  Star
 } from 'lucide-react';
 
-export default function AntigravityProductShowcase({ onOpenDownload }) {
-
+// Reusable 3D Floating Phone Shell (No background box - transparent on page)
+function PhoneShell({ accentColor = 'rose', dotColor = 'bg-rose-500', children }) {
   return (
-    <div className="relative z-10 w-full py-16 space-y-28 sm:space-y-36">
+    <div className="animate-float">
+      {/* Soft floating under-shadow */}
+      <div className={`absolute -bottom-8 left-1/2 -translate-x-1/2 w-52 h-8 bg-${accentColor}-950/10 blur-2xl rounded-full pointer-events-none`}></div>
+
+      {/* Phone body - transparent bezel */}
+      <div className={`animate-rotate3d relative bg-gray-950 rounded-[44px] p-3 border-4 border-gray-800 shadow-[0_30px_80px_rgba(0,0,0,0.28)] shadow-${accentColor}-500/10`}>
+        
+        {/* Dynamic Island */}
+        <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-30 flex items-center justify-between px-3">
+          <div className="w-2 h-2 rounded-full bg-gray-800"></div>
+          <div className={`w-2.5 h-2.5 rounded-full ${dotColor} animate-pulse`}></div>
+        </div>
+
+        {/* Screen content area */}
+        <div className="relative rounded-[36px] overflow-hidden h-[500px] flex flex-col">
+          {children}
+        </div>
+      </div>
+    </div>
+  );
+}
+
+// Central 3D Spinning Icon Badge
+function Spinning3DIcon({ icon: Icon, color }) {
+  return (
+    <div className="flex flex-col items-center justify-center py-4 my-auto">
+      <div className={`relative w-28 h-28 rounded-full bg-gradient-to-tr from-${color}-600 to-${color}-400 text-white flex flex-col items-center justify-center shadow-2xl`}>
+        <div className="animate-icon-pendulum flex flex-col items-center justify-center">
+          <Icon className="w-9 h-9 mb-1 drop-shadow-lg" />
+          <span className="text-[10px] font-extrabold tracking-widest uppercase">Shakti</span>
+        </div>
+        {/* Pulse rings */}
+        <span className="absolute inset-0 rounded-full border-2 border-white/30 animate-ping"></span>
+        <span className="absolute inset-[-8px] rounded-full border border-white/10 animate-ping" style={{animationDelay: '0.5s'}}></span>
+      </div>
+    </div>
+  );
+}
+
+export default function AntigravityProductShowcase({ onOpenDownload }) {
+  return (
+    <div id="shakti-features" className="relative z-10 w-full py-16 space-y-32 sm:space-y-44">
       
-      {/* SECTION 1: Giant Manifesto Typography (Exact match to Reference Image 1) */}
-      <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="max-w-4xl">
-          <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-medium text-gray-950 tracking-tight leading-[1.14] font-sans">
-            Shakti is our women safety and autonomous emergency response platform, allowing anyone to feel protected in the AI-first era.
-            <span className="inline-block w-[3px] h-[0.9em] ml-2 align-middle bg-gradient-to-b from-rose-500 to-pink-600 animate-pulse rounded-full"></span>
-          </h2>
+      {/* Manifesto Headline */}
+      <section className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
+        <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-rose-50 border border-rose-200 text-xs font-bold text-rose-700 mb-4">
+          <Sparkles className="w-3.5 h-3.5" />
+          <span>Autonomous Safety Platform</span>
         </div>
+        <h2 className="text-3xl sm:text-5xl font-medium text-gray-950 tracking-tight leading-[1.15] font-sans">
+          Built for real-world confidence—empowering women, parents, and verified communities.
+        </h2>
       </section>
 
-      {/* SECTION 2: Shakti 2.0 (Exact match to Reference Image 2) */}
-      <section id="shakti-2" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* ───────────────────────────────────────────────────────────
+          FEATURE 1 · Voice Control & AI Voice Sentinel
+          Layout: Text Left · Transparent 3D Phone Right
+      ─────────────────────────────────────────────────────────── */}
+      <section id="voice-sentinel" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left: Text Description */}
-          <div className="lg:col-span-5 space-y-5">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 tracking-tight font-display">
-              Shakti 2.0
-            </h3>
-            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Your command center to manage personal safety and real-time guardian mesh in parallel. Group contacts into Safe Circles, operate across multi-zone geofences, and automate routine safety checks with scheduled beacons.
-            </p>
-          </div>
-
-          {/* Right: Soft Glowing Container with Floating Command Console Card */}
-          <div className="lg:col-span-7 flex justify-center">
-            <div className="relative w-full max-w-[560px] aspect-[4/3] rounded-[36px] bg-gradient-to-br from-blue-50/70 via-rose-50/40 to-amber-50/50 p-6 sm:p-10 flex items-center justify-center shadow-[0_20px_60px_rgba(0,0,0,0.04)] border border-gray-100/80 overflow-hidden group">
-              
-              {/* Subtle ambient aura */}
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_top_right,rgba(59,130,246,0.18),transparent_65%)] pointer-events-none"></div>
-              <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_bottom_left,rgba(244,63,94,0.15),transparent_60%)] pointer-events-none"></div>
-
-              {/* Floating UI Card mimicking Image 2 */}
-              <div className="relative z-10 w-full bg-white/95 backdrop-blur-md rounded-2xl p-5 sm:p-6 shadow-[0_12px_32px_rgba(0,0,0,0.08)] border border-gray-200/90 space-y-4">
-                
-                {/* Project / Safe Circle Selector */}
-                <div className="flex items-center space-x-2 text-xs font-semibold text-gray-700">
-                  <Folder className="w-3.5 h-3.5 text-gray-500" />
-                  <span>safe-circle-family</span>
-                  <ChevronDown className="w-3 h-3 text-gray-400" />
-                </div>
-
-                {/* Input Prompt Box */}
-                <div className="bg-[#F8F9FA] rounded-xl p-3.5 border border-gray-200/70 space-y-3">
-                  <div className="text-xs sm:text-sm text-gray-400 font-normal">
-                    Ask anything, @ to mention, / for actions
-                  </div>
-
-                  <div className="flex items-center justify-between pt-1">
-                    {/* Engine Pill */}
-                    <div className="inline-flex items-center space-x-1.5 bg-white px-2.5 py-1 rounded-lg border border-gray-200 shadow-2xs text-[11px] font-medium text-gray-800">
-                      <span className="text-rose-600 font-bold">+</span>
-                      <span>Shakti Sentinel AI</span>
-                      <ChevronDown className="w-3 h-3 text-gray-400" />
-                    </div>
-
-                    <div className="w-6 h-6 rounded-full bg-gray-200/80 flex items-center justify-center text-gray-600">
-                      <Mic className="w-3.5 h-3.5" />
-                    </div>
-                  </div>
-                </div>
-
-                {/* Worktree / Guardian Mesh Selector Row */}
-                <div className="flex items-center space-x-4 text-xs font-medium text-gray-600 pt-1">
-                  <div className="flex items-center space-x-1.5 cursor-pointer hover:text-gray-900">
-                    <GitBranch className="w-3.5 h-3.5 text-gray-500" />
-                    <span>Guardian Mesh</span>
-                    <ChevronDown className="w-3 h-3 text-gray-400" />
-                  </div>
-                  <div className="flex items-center space-x-1.5 cursor-pointer hover:text-gray-900">
-                    <GitBranch className="w-3.5 h-3.5 text-gray-500" />
-                    <span>Live Telemetry</span>
-                    <ChevronDown className="w-3 h-3 text-gray-400" />
-                  </div>
-                </div>
-
-                {/* Simulated Dropdown Popover */}
-                <div className="w-40 bg-white rounded-xl shadow-lg border border-gray-200/90 p-1.5 space-y-1 text-xs text-gray-700 animate-in fade-in slide-in-from-top-1 duration-150">
-                  <div className="flex items-center space-x-2 px-2.5 py-1.5 rounded-lg bg-gray-50 font-medium text-gray-950">
-                    <Monitor className="w-3.5 h-3.5 text-gray-600" />
-                    <span>Local Device</span>
-                  </div>
-                  <div className="flex items-center space-x-2 px-2.5 py-1.5 rounded-lg hover:bg-gray-50 text-gray-600">
-                    <GitBranch className="w-3.5 h-3.5 text-rose-500" />
-                    <span>Peer Mesh</span>
-                  </div>
-                </div>
-
-              </div>
-
+          {/* Left Text */}
+          <div className="lg:col-span-6 space-y-5 text-left">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-pink-50 border border-pink-200 text-xs font-bold text-pink-700">
+              <Mic className="w-3.5 h-3.5 text-pink-600" />
+              <span>Voice Security</span>
             </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 3: Voice Sentinel AI / IDE (Exact match to Reference Image 3) */}
-      <section id="sentinel-ai" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left: Text Description & Action Pill */}
-          <div className="lg:col-span-5 space-y-6">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 tracking-tight font-display">
-              Voice Sentinel AI
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 tracking-tight font-display">
+              Voice Control & Sentinel
             </h3>
             <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              The fully-featured, autonomous safety engine. Complete with acoustic distress listener, encrypted evidence recordings, and a deep understanding of your surrounding environment.
+              Talk directly with Shakti's voice AI assistant or let acoustic listeners operate silently in the background. Speak <span className="font-semibold text-rose-600">"Help Shakti"</span> or <span className="font-semibold text-rose-600">"Bachao"</span> to trigger sub-2s emergency dispatch, even when your phone is locked inside your bag.
             </p>
-            <div>
-              <button 
-                onClick={onOpenDownload}
-                className="inline-flex items-center space-x-2 bg-[#F1F3F4] hover:bg-[#E8EAED] text-gray-900 px-6 py-3 rounded-full text-sm font-medium transition-all hover:scale-105 active:scale-95 shadow-2xs"
-              >
-                <span>Explore Product</span>
+            <div className="space-y-2.5 pt-1 text-xs sm:text-sm font-semibold text-gray-800">
+              {['On-device voice recognition (triggers offline without data)', 'Acoustic distress pitch & scream frequency detection', 'Sub-2 second emergency dispatch to police & guardians'].map((pt, i) => (
+                <div key={i} className="flex items-center space-x-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>{pt}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3">
+              <button onClick={onOpenDownload} className="bg-gray-950 hover:bg-black text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-2">
+                <Download className="w-4 h-4 text-gray-300" />
+                <span>Download Shakti App</span>
               </button>
             </div>
           </div>
 
-          {/* Right: Code Console with Multi-Color Gradient Glow Border */}
-          <div className="lg:col-span-7 flex justify-center">
-            <div className="relative w-full max-w-[620px] rounded-[32px] p-[2px] bg-gradient-to-tr from-rose-400 via-amber-300 to-cyan-400 shadow-[0_20px_50px_rgba(244,63,94,0.12)]">
-              
-              {/* Inner IDE Window */}
-              <div className="bg-white rounded-[30px] overflow-hidden p-4 sm:p-6 text-xs sm:text-sm font-mono text-gray-800 shadow-inner">
-                
-                {/* IDE Window Tabs */}
-                <div className="flex items-center space-x-4 border-b border-gray-100 pb-3 mb-4 text-xs font-sans text-gray-500">
-                  <div className="flex items-center space-x-1.5 cursor-pointer hover:text-gray-900">
-                    <FileText className="w-3.5 h-3.5 text-gray-400" />
-                    <span>EmergencyPlan.md</span>
-                  </div>
-                  <div className="flex items-center space-x-1.5 text-rose-600 font-semibold border-b-2 border-rose-500 pb-1">
-                    <FileCode className="w-3.5 h-3.5" />
-                    <span>VoiceSentinel.ts 1</span>
-                  </div>
-                </div>
-
-                {/* Breadcrumb */}
-                <div className="text-[11px] text-gray-400 mb-3 font-sans flex items-center space-x-1">
-                  <span>shakti</span>
-                  <span>&gt;</span>
-                  <span>sentinel</span>
-                  <span>&gt;</span>
-                  <span className="text-gray-700 font-medium">VoiceSentinel.ts</span>
-                </div>
-
-                {/* Code Editor Body */}
-                <div className="space-y-1.5 leading-relaxed text-[11px] sm:text-xs">
-                  <div className="flex space-x-3 text-gray-400">
-                    <span className="w-5 select-none text-right text-gray-300">1</span>
-                    <span className="text-purple-600 font-semibold">import</span>
-                    <span className="text-blue-600">AutonomousRelay</span>
-                    <span className="text-purple-600">from</span>
-                    <span className="text-rose-600">'@shakti/sentinel'</span>;
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">2</span>
-                    <span></span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">3</span>
-                    <span>
-                      <span className="text-purple-600 font-semibold">export default function </span>
-                      <span className="text-blue-600 font-semibold">EmergencyDispatcher</span>():
-                      <span className="text-amber-600"> SafetyAction</span> &#123;
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">4</span>
-                    <span className="pl-4">
-                      <span className="text-purple-600 font-semibold">return </span>(
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3 bg-rose-50/60 -mx-4 px-4 py-0.5 rounded">
-                    <span className="w-5 select-none text-right text-gray-300">5</span>
-                    <span className="pl-8 text-gray-800">
-                      &lt;<span className="text-rose-600 font-bold">GuardianMesh</span>
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">6</span>
-                    <span className="pl-12">
-                      <span className="text-red-500">trigger</span>=<span className="text-rose-600">"voice_anomaly_detected"</span>
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">7</span>
-                    <span className="pl-12">
-                      <span className="text-red-500">className</span>=<span className="text-rose-600">"dispatch-priority-immediate"</span>
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">8</span>
-                    <span className="pl-12">
-                      <span className="text-red-500">onDistress</span>=&#123;() =&gt; broadcast112Police(&#123;
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">9</span>
-                    <span className="pl-16 text-gray-600">
-                      gps: telemetry.coordinates, audioVault: AES256.latest()
-                    </span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">10</span>
-                    <span className="pl-12">&#125;)&#125;</span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">11</span>
-                    <span className="pl-8 text-gray-800">/&gt;</span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">12</span>
-                    <span className="pl-4">);</span>
-                  </div>
-
-                  <div className="flex space-x-3">
-                    <span className="w-5 select-none text-right text-gray-300">13</span>
-                    <span>&#125;</span>
-                  </div>
-                </div>
-
-              </div>
-
-            </div>
-          </div>
-
-        </div>
-      </section>
-
-      {/* SECTION 4: Guardian Mesh & CLI (Exact match to Reference Image 4) */}
-      <section id="guardian-mesh" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
-          
-          {/* Left: Text Description */}
-          <div className="lg:col-span-5 space-y-5">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 tracking-tight font-display">
-              Guardian Mesh & CLI
-            </h3>
-            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              The lightweight, fast, terminal-first surface to coordinate emergency responders and family mesh. Broadcast encrypted distress beacons over local mesh without cellular connectivity, track real-time telemetry, and dispatch 112 directly.
-            </p>
-          </div>
-
-          {/* Right: Deep Dark Space Container with Terminal Window */}
-          <div className="lg:col-span-7 flex justify-center">
-            <div className="relative w-full max-w-[580px] rounded-[36px] bg-[#050811] p-6 sm:p-8 border border-gray-800/80 shadow-2xl overflow-hidden text-gray-300 font-mono text-xs sm:text-sm">
-              
-              {/* Starfield Particles */}
-              <div className="absolute inset-0 opacity-30 bg-[radial-gradient(white_1px,transparent_1px)] [background-size:16px_16px]"></div>
-
-              {/* Terminal Window */}
-              <div className="relative z-10 rounded-2xl bg-[#0B101D]/90 border border-gray-800 p-4 sm:p-5 shadow-2xl space-y-4 backdrop-blur-sm">
-                
-                {/* 3 Mac Dots */}
-                <div className="flex items-center space-x-1.5 pb-2 border-b border-gray-800/70">
-                  <div className="w-2.5 h-2.5 rounded-full bg-rose-500/90"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-amber-500/90"></div>
-                  <div className="w-2.5 h-2.5 rounded-full bg-emerald-500/90"></div>
-                  <span className="text-[10px] text-gray-500 pl-2 font-sans">shakti-mesh-gateway — zsh</span>
-                </div>
-
-                {/* Pixel Graphic + Welcome */}
-                <div className="flex items-center space-x-3 pt-1">
-                  <div className="w-7 h-7 rounded-lg bg-gradient-to-tr from-rose-500 via-pink-500 to-indigo-500 flex items-center justify-center font-bold text-white shadow-xs">
-                    ▲
-                  </div>
-                  <div>
-                    <div className="text-xs font-bold text-white">Welcome to Shakti Mesh Gateway!</div>
-                    <div className="text-[10px] text-gray-400">Autonomous Sentinel v2.4.0 Online</div>
-                  </div>
-                </div>
-
-                {/* Terminal Content Split */}
-                <div className="grid grid-cols-1 sm:grid-cols-12 gap-4 pt-2">
+          {/* Right – Transparent 3D floating phone, NO background box */}
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="relative w-full max-w-[300px] sm:max-w-[320px]">
+              <PhoneShell accentColor="rose" dotColor="bg-rose-500">
+                {/* Screen background */}
+                <div className="flex-1 bg-gradient-to-b from-rose-50 via-white to-pink-50 p-4 pt-10 flex flex-col justify-between text-gray-900">
                   
-                  {/* Left: Mode Selector */}
-                  <div className="sm:col-span-5 space-y-1.5 text-[11px] text-gray-400 border-r border-gray-800/80 pr-2">
-                    <div className="text-gray-300 font-semibold mb-1">Choose protocol:</div>
-                    <div className="cursor-pointer hover:text-white">  offline bluetooth</div>
-                    <div className="cursor-pointer hover:text-white">  encrypted sms mesh</div>
-                    <div className="text-emerald-400 font-bold bg-emerald-950/40 px-1.5 py-0.5 rounded border border-emerald-800/50">
-                      &gt; direct 112 gateway
+                  {/* Header */}
+                  <div className="flex items-center justify-between border-b border-pink-100 pb-2.5">
+                    <div className="flex items-center space-x-1.5">
+                      <Mic className="w-3.5 h-3.5 text-rose-600 animate-pulse" />
+                      <span className="text-xs font-bold">Voice Sentinel</span>
                     </div>
-                    <div className="cursor-pointer hover:text-white">  stealth silent guard</div>
-                    
-                    <div className="pt-2 text-[10px] text-gray-500">
-                      [Next] &gt;
+                    <span className="text-[10px] bg-rose-100 text-rose-700 font-bold px-2 py-0.5 rounded-full">AI Listening</span>
+                  </div>
+
+                  {/* Waveform */}
+                  <div className="bg-white rounded-2xl p-3 border border-pink-100 space-y-2 text-center">
+                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Listening: "Help Shakti"</span>
+                    <div className="flex items-center justify-center space-x-1 h-10">
+                      {[40, 70, 95, 60, 100, 85, 45, 90, 75, 50].map((h, i) => (
+                        <div key={i} className="w-1.5 bg-gradient-to-t from-pink-400 to-rose-600 rounded-full animate-pulse" style={{ height: `${h}%`, animationDelay: `${i * 0.12}s` }}></div>
+                      ))}
+                    </div>
+                    <div className="text-[10px] font-bold text-rose-600 flex items-center justify-center space-x-1">
+                      <span className="w-1.5 h-1.5 rounded-full bg-rose-600 animate-ping inline-block"></span>
+                      <span>Keyphrase → SOS Dispatching</span>
                     </div>
                   </div>
 
-                  {/* Right: Live Log Output */}
-                  <div className="sm:col-span-7 space-y-1 text-[11px] font-mono leading-relaxed">
-                    <div className="text-gray-400">&gt; you: arm autonomous guardian</div>
-                    <div className="text-emerald-400 font-semibold">SHAKTI: Distress verified. Relaying to 4 guardians...</div>
-                    <div className="text-gray-500 pt-1">1  // Emergency Telemetry</div>
-                    <div className="text-gray-500">2  // Battery 94% • GPS Lat/Lng 19.07, 72.87</div>
-                    <div className="text-rose-400 font-semibold bg-rose-950/40 px-1 py-0.5 rounded">
-                      - status: IDLE
-                    </div>
-                    <div className="text-emerald-300 font-semibold bg-emerald-950/40 px-1 py-0.5 rounded">
-                      + status: ACTIVE_SENTINEL
-                    </div>
-                    <div className="text-cyan-400 pt-1">
-                      dispatchReady("112 Police Gateway", true)
-                    </div>
+                  {/* 3D Rotating Shakti Icon */}
+                  <Spinning3DIcon icon={ShieldAlert} color="rose" />
+
+                  {/* Footer */}
+                  <div className="p-2.5 bg-rose-50/70 rounded-xl border border-rose-100 text-[10px] text-gray-700 font-semibold flex items-center justify-between">
+                    <span>256-bit Encrypted Audio Vault</span>
+                    <span className="text-emerald-600 font-bold">Armed</span>
                   </div>
 
                 </div>
-
-              </div>
-
+              </PhoneShell>
             </div>
           </div>
 
         </div>
       </section>
 
-      {/* SECTION 5: Shakti SDK (Exact match to Reference Image 5) */}
-      <section id="shakti-sdk" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
+      {/* ───────────────────────────────────────────────────────────
+          FEATURE 2 · Parenting Rules & Student Safety
+          Layout: Transparent 3D Phone Left · Text Right (Shuffled)
+      ─────────────────────────────────────────────────────────── */}
+      <section id="parenting-suite" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
           
-          {/* Left: Text Description */}
-          <div className="lg:col-span-5 space-y-5">
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 tracking-tight font-display">
-              Shakti SDK
-            </h3>
-            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Prototype custom safety agents leveraging Shakti's harness with minimal code. Simple Python and Flutter scripts to iterate on safety applications, automate transport check-ins, and run evaluations on top of the Shakti emergency harness.
-            </p>
+          {/* Left – Transparent 3D Floating Phone */}
+          <div className="lg:col-span-6 flex justify-center order-2 lg:order-1">
+            <div className="relative w-full max-w-[300px] sm:max-w-[320px]">
+              <PhoneShell accentColor="blue" dotColor="bg-blue-500">
+                <div className="flex-1 bg-gradient-to-b from-blue-50 via-white to-sky-50 p-4 pt-10 flex flex-col justify-between text-gray-900">
+                  
+                  <div className="flex items-center justify-between border-b border-blue-100 pb-2.5">
+                    <div className="flex items-center space-x-1.5">
+                      <UserCheck className="w-3.5 h-3.5 text-blue-600" />
+                      <span className="text-xs font-bold">Parent Dashboard</span>
+                    </div>
+                    <span className="text-[10px] bg-blue-100 text-blue-700 font-bold px-2 py-0.5 rounded-full">Live Sync</span>
+                  </div>
+
+                  <div className="bg-white rounded-2xl p-3 border border-blue-100 space-y-1.5">
+                    <div className="flex items-center justify-between text-xs font-bold text-gray-900">
+                      <span>Ananya (College)</span>
+                      <span className="text-emerald-600 bg-emerald-50 px-2 py-0.5 rounded-full text-[10px]">In Safe Zone</span>
+                    </div>
+                    <div className="flex items-center justify-between text-[11px] text-gray-500 font-mono">
+                      <span>Battery: 92%</span><span>Speed: 0 km/h</span>
+                    </div>
+                  </div>
+
+                  {/* Live Map */}
+                  <div className="relative h-24 bg-blue-50 rounded-2xl border border-blue-100 flex items-center justify-center overflow-hidden">
+                    <div className="absolute inset-0 opacity-20 bg-[radial-gradient(#2563eb_1px,transparent_1px)] [background-size:10px_10px]"></div>
+                    <div className="flex flex-col items-center z-10">
+                      <MapPin className="w-5 h-5 text-blue-600 animate-bounce" />
+                      <span className="text-[10px] font-bold text-blue-900 bg-white/90 px-2 py-0.5 rounded-full mt-1">Campus Library</span>
+                    </div>
+                  </div>
+
+                  {/* 3D Rotating icon */}
+                  <Spinning3DIcon icon={UserCheck} color="blue" />
+
+                </div>
+              </PhoneShell>
+            </div>
           </div>
 
-          {/* Right: Dark Container with Luminous Blue Concentric Aura Portal */}
-          <div className="lg:col-span-7 flex justify-center">
-            <div className="relative w-full max-w-[560px] aspect-square rounded-[40px] bg-[#030712] p-8 flex items-center justify-center shadow-2xl border border-gray-800/90 overflow-hidden group">
-              
-              {/* Radiant concentric glowing aura portal matching Image 5 */}
-              <div className="absolute w-80 h-80 sm:w-96 sm:h-96 rounded-full bg-gradient-to-tr from-blue-600 via-indigo-600 to-sky-400 blur-3xl opacity-40 group-hover:opacity-60 transition-opacity duration-700 animate-pulse"></div>
-              
-              {/* Outer halo ring */}
-              <div className="absolute w-72 h-72 sm:w-84 sm:h-84 rounded-full border border-blue-400/20 shadow-[0_0_80px_rgba(59,130,246,0.3)]"></div>
-              
-              {/* Middle glowing aura */}
-              <div className="absolute w-56 h-56 sm:w-64 sm:h-64 rounded-full bg-gradient-to-b from-blue-900/60 to-black border border-blue-500/40 shadow-[0_0_50px_rgba(96,165,250,0.4)] flex items-center justify-center">
-                
-                {/* Center Glowing Title matching Image 5 */}
-                <h4 className="text-2xl sm:text-3xl font-medium text-white font-display tracking-tight drop-shadow-[0_0_20px_rgba(255,255,255,0.8)] select-none">
-                  Shakti SDK
-                </h4>
+          {/* Right Text */}
+          <div className="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-blue-50 border border-blue-200 text-xs font-bold text-blue-700">
+              <UserCheck className="w-3.5 h-3.5 text-blue-600" />
+              <span>Parent Control</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 tracking-tight font-display">
+              Parenting Rules & Student Safety
+            </h3>
+            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
+              Parents get full real-time visibility to monitor student and child safety during travel. Set safe geofenced corridors, receive automated arrival updates, and monitor device telemetry directly from the Parent Dashboard.
+            </p>
+            <div className="space-y-2.5 pt-1 text-xs sm:text-sm font-semibold text-gray-800">
+              {['Live student GPS location & Safe Corridor Geofencing', 'Real-time battery percentage & network telemetry sync', 'Curfew anomaly alerts & instant guardian call push'].map((pt, i) => (
+                <div key={i} className="flex items-center space-x-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-blue-600 shrink-0" />
+                  <span>{pt}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3">
+              <button onClick={onOpenDownload} className="bg-blue-600 hover:bg-blue-700 text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-2">
+                <Download className="w-4 h-4 text-blue-100" />
+                <span>Download Parent App</span>
+              </button>
+            </div>
+          </div>
 
-              </div>
+        </div>
+      </section>
 
+      {/* ───────────────────────────────────────────────────────────
+          FEATURE 3 · Safe Social Hub & Verified Community
+          Layout: Text Left · Transparent 3D Phone Right
+      ─────────────────────────────────────────────────────────── */}
+      <section id="social-hub" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          
+          {/* Left Text */}
+          <div className="lg:col-span-6 space-y-5 text-left">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-emerald-50 border border-emerald-200 text-xs font-bold text-emerald-700">
+              <Users className="w-3.5 h-3.5 text-emerald-600" />
+              <span>Verified Network</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 tracking-tight font-display">
+              Safe Social Hub
+            </h3>
+            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
+              Connect with ID-verified women, campus peers, and nearby safe havens. Coordinate walk-together group commutes, stay informed with neighborhood safety alerts, and chat in a 100% verified space.
+            </p>
+            <div className="space-y-2.5 pt-1 text-xs sm:text-sm font-semibold text-gray-800">
+              {['Aadhaar & ID-verified women safety community circles', 'Walk-with-me group commute organizer', 'Real-time neighborhood safety alerts & map pins'].map((pt, i) => (
+                <div key={i} className="flex items-center space-x-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
+                  <span>{pt}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3">
+              <button onClick={onOpenDownload} className="bg-emerald-600 hover:bg-emerald-700 text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-2">
+                <Download className="w-4 h-4 text-emerald-100" />
+                <span>Join Social Hub</span>
+              </button>
+            </div>
+          </div>
+
+          {/* Right – Transparent 3D Floating Phone */}
+          <div className="lg:col-span-6 flex justify-center">
+            <div className="relative w-full max-w-[300px] sm:max-w-[320px]">
+              <PhoneShell accentColor="emerald" dotColor="bg-emerald-500">
+                <div className="flex-1 bg-gradient-to-b from-emerald-50 via-white to-teal-50 p-4 pt-10 flex flex-col justify-between text-gray-900">
+                  
+                  <div className="flex items-center justify-between border-b border-emerald-100 pb-2.5">
+                    <div className="flex items-center space-x-1.5">
+                      <Users className="w-3.5 h-3.5 text-emerald-600" />
+                      <span className="text-xs font-bold">Delhi Women Hub</span>
+                    </div>
+                    <span className="text-[10px] bg-emerald-100 text-emerald-700 font-bold px-2 py-0.5 rounded-full">100% Verified</span>
+                  </div>
+
+                  <div className="space-y-2">
+                    <div className="p-2.5 bg-white rounded-xl border border-emerald-100 text-xs space-y-1">
+                      <div className="flex items-center justify-between font-bold text-gray-900 text-[11px]">
+                        <span>Neha (Verified)</span>
+                        <span className="text-[9px] text-gray-400">10:42 PM</span>
+                      </div>
+                      <p className="text-[11px] text-gray-600">Reaching Metro Station. Anyone walking to Block C?</p>
+                    </div>
+                    <div className="p-2.5 bg-emerald-100/60 rounded-xl border border-emerald-200 text-xs space-y-1 ml-3">
+                      <div className="flex items-center justify-between font-bold text-emerald-900 text-[11px]">
+                        <span>Priya (Guardian)</span>
+                        <span className="text-[9px] text-emerald-700">10:43 PM</span>
+                      </div>
+                      <p className="text-[11px] text-emerald-950 font-semibold">I'm at Exit 2! Shakti Corridor Active ✓</p>
+                    </div>
+                  </div>
+
+                  {/* 3D Rotating Icon */}
+                  <Spinning3DIcon icon={Users} color="emerald" />
+
+                  <div className="p-2.5 bg-white rounded-xl border border-emerald-100 flex items-center justify-between text-xs text-gray-400">
+                    <span>Ask for walk buddy...</span>
+                    <MessageSquare className="w-4 h-4 text-emerald-600" />
+                  </div>
+
+                </div>
+              </PhoneShell>
+            </div>
+          </div>
+
+        </div>
+      </section>
+
+      {/* ───────────────────────────────────────────────────────────
+          FEATURE 4 · Community, Friends & Self Improvement
+          Layout: Transparent 3D Phone Left · Text Right (Shuffled)
+      ─────────────────────────────────────────────────────────── */}
+      <section id="empowerment-hub" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-center">
+          
+          {/* Left – Transparent 3D Floating Phone */}
+          <div className="lg:col-span-6 flex justify-center order-2 lg:order-1">
+            <div className="relative w-full max-w-[300px] sm:max-w-[320px]">
+              <PhoneShell accentColor="purple" dotColor="bg-purple-500">
+                <div className="flex-1 bg-gradient-to-b from-purple-50 via-white to-pink-50 p-4 pt-10 flex flex-col justify-between text-gray-900">
+                  
+                  <div className="flex items-center justify-between border-b border-purple-100 pb-2.5">
+                    <div className="flex items-center space-x-1.5">
+                      <Award className="w-3.5 h-3.5 text-purple-600" />
+                      <span className="text-xs font-bold">Empowerment Hub</span>
+                    </div>
+                    <span className="text-[10px] bg-purple-100 text-purple-700 font-bold px-2 py-0.5 rounded-full">Confidence</span>
+                  </div>
+
+                  <div className="bg-white rounded-2xl p-4 border border-purple-100 text-center space-y-2">
+                    <span className="text-[10px] font-mono text-gray-500 uppercase tracking-wider">Personal Safety Index</span>
+                    <div className="text-3xl font-extrabold text-purple-600 font-display flex items-center justify-center space-x-1">
+                      <Activity className="w-6 h-6 text-purple-600 animate-pulse" />
+                      <span>96 / 100</span>
+                    </div>
+                    <p className="text-[10px] font-bold text-emerald-600">Optimal Readiness</p>
+                  </div>
+
+                  {/* 3D Rotating Icon */}
+                  <Spinning3DIcon icon={Star} color="purple" />
+
+                  <div className="p-3 bg-purple-50 rounded-xl border border-purple-100 space-y-1">
+                    <span className="text-[10px] font-bold text-purple-700 bg-purple-100 px-2 py-0.5 rounded">Active Module</span>
+                    <h4 className="font-bold text-gray-900 text-xs">Tactical Situational Awareness 101</h4>
+                    <div className="w-full bg-purple-200 h-1.5 rounded-full mt-1">
+                      <div className="bg-purple-600 h-full w-[80%] rounded-full"></div>
+                    </div>
+                  </div>
+
+                </div>
+              </PhoneShell>
+            </div>
+          </div>
+
+          {/* Right Text */}
+          <div className="lg:col-span-6 space-y-5 text-left order-1 lg:order-2">
+            <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-purple-50 border border-purple-200 text-xs font-bold text-purple-700">
+              <Award className="w-3.5 h-3.5 text-purple-600" />
+              <span>Self Improvement</span>
+            </div>
+            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-extrabold text-gray-950 tracking-tight font-display">
+              Make Friends & Elevate Yourself
+            </h3>
+            <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
+              Empower yourself every single day. Build safe local friendships, participate in women empowerment workshops, complete self-defense modules, and track your personal safety index.
+            </p>
+            <div className="space-y-2.5 pt-1 text-xs sm:text-sm font-semibold text-gray-800">
+              {['Interactive self-defense & crisis management courses', 'Personal Safety Readiness Score & daily check-ins', 'Verified local sisterhood circles & confidence workshops'].map((pt, i) => (
+                <div key={i} className="flex items-center space-x-2.5">
+                  <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0" />
+                  <span>{pt}</span>
+                </div>
+              ))}
+            </div>
+            <div className="pt-3">
+              <button onClick={onOpenDownload} className="bg-purple-600 hover:bg-purple-700 text-white px-7 py-3.5 rounded-full text-sm font-bold shadow-md hover:scale-105 transition-all flex items-center space-x-2">
+                <Download className="w-4 h-4 text-purple-100" />
+                <span>Start Self Improvement</span>
+              </button>
             </div>
           </div>
 

@@ -1,140 +1,109 @@
 import {
   Smartphone,
-  Mic,
-  Radio,
-  Lock,
   Sparkles,
-  ArrowRight
+  ArrowRight,
+  Download,
+  ShieldCheck,
+  CheckCircle2
 } from 'lucide-react';
 
 export default function ProductsPage({ onOpenDownload, onNavigatePricing }) {
 
-  const products = [
-    {
-      title: 'Shakti Mobile 2.0',
-      subtitle: 'Autonomous Women Safety & Emergency SOS App',
-      icon: Smartphone,
-      color: 'rose',
-      tag: 'Core Mobile App',
-      points: [
-        '1-Tap and 3x hardware power-click emergency trigger',
-        'Sub-2 second parallel dispatch to 112 police gateway & guardians',
-        'Real-time live GPS telemetry broadcast with battery status sync',
-        'Tactical AI fake call generator to exit uncomfortable situations'
-      ]
-    },
-    {
-      title: 'Voice Sentinel AI',
-      subtitle: 'Hands-Free Acoustic Keyword Listener',
-      icon: Mic,
-      color: 'pink',
-      tag: 'On-Device AI',
-      points: [
-        'Recognizes emergency distress phrases like "Help Shakti" or "Bachao"',
-        'Runs privately on-device even when phone is locked inside purse/pocket',
-        'Distress pitch and acoustic anomaly sentiment detection',
-        'Zero cloud audio snooping or battery drain'
-      ]
-    },
-    {
-      title: 'Guardian Mesh Network',
-      subtitle: 'Zero-Data Bluetooth & Peer Telemetry Relay',
-      icon: Radio,
-      color: 'blue',
-      tag: 'Offline Resilience',
-      points: [
-        'Relays encrypted SOS tokens peer-to-peer without active mobile data',
-        'Parallel multi-guardian telemetry sync with ultra-low latency',
-        'Loud siren push notification overrides phone silent mode',
-        'Safe zone geofencing (college, office, home arrival check-ins)'
-      ]
-    },
-    {
-      title: 'Cloud Evidence Vault',
-      subtitle: 'Tamper-Proof 256-bit Encrypted Incident Backup',
-      icon: Lock,
-      color: 'purple',
-      tag: 'Security & Legal',
-      points: [
-        'Auto 30s background audio and video recording upon SOS trigger',
-        'Client-side AES-256 encryption with zero-knowledge keys',
-        'Immutable cloud evidence vault for first responders and legal protection',
-        'Stealth camouflage mode (app disguised as calculator/notes icon)'
-      ]
-    }
+  const points = [
+    '1-Tap & 3x hardware power-button emergency dispatch',
+    'Hands-free Voice Sentinel listener ("Help Shakti" / "Bachao")',
+    'Sub-2 second parallel relay to 112 Police & verified guardians',
+    'Real-time GPS tracking with safe corridor geofencing',
+    'Encrypted 256-bit background evidence audio recording',
+    'Tactical AI fake incoming call generator'
   ];
 
   return (
-    <div className="pt-24 sm:pt-32 pb-20 animate-in fade-in duration-200">
+    <div className="pt-24 sm:pt-32 pb-24 min-h-screen bg-gradient-to-b from-[#FAFAF9] via-pink-50/20 to-[#FAFAF9] animate-in fade-in duration-200">
       
-      <div className="max-w-5xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
         {/* Header */}
         <div className="text-center max-w-2xl mx-auto mb-12">
-          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200 mb-3">
+          <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-4 py-1.5 rounded-full border border-rose-200 mb-4 shadow-xs">
             <Sparkles className="w-3.5 h-3.5 text-rose-600" />
-            <span>Product Suite</span>
+            <span>Official Shakti App</span>
           </div>
 
-          <h1 className="text-3xl sm:text-5xl font-extrabold text-gray-950 font-display tracking-tight">
-            Explore the Shakti Safety Stack
+          <h1 className="text-4xl sm:text-6xl font-extrabold text-gray-950 font-display tracking-tight">
+            Shakti
           </h1>
-          <p className="text-sm text-gray-600 mt-2">
-            Engineered with on-device acoustic intelligence, offline mesh networks, and instant emergency dispatch.
+          <p className="text-base sm:text-lg text-gray-600 mt-3 leading-relaxed">
+            The next-generation autonomous women safety & emergency dispatch platform.
           </p>
         </div>
 
-        {/* 4 Products Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-          {products.map((prod, idx) => {
-            const Icon = prod.icon;
-            return (
-              <div 
-                key={idx}
-                className="bg-white rounded-3xl p-7 border border-pink-200/80 shadow-xs hover:shadow-xl hover:border-pink-300 transition-all flex flex-col justify-between"
-              >
-                <div>
-                  <div className="flex items-center justify-between mb-4">
-                    <div className="w-10 h-10 rounded-2xl bg-rose-50 text-rose-600 flex items-center justify-center">
-                      <Icon className="w-5 h-5" />
-                    </div>
-                    <span className="text-[10px] font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200/60">
-                      {prod.tag}
-                    </span>
-                  </div>
-
-                  <h3 className="text-xl font-bold text-gray-900 mb-1">{prod.title}</h3>
-                  <p className="text-xs text-gray-500 font-medium mb-4">{prod.subtitle}</p>
-
-                  <ul className="space-y-2.5 text-xs text-gray-700 font-medium mb-6">
-                    {prod.points.map((pt, i) => (
-                      <li key={i} className="flex items-start space-x-2">
-                        <span className="text-rose-600 font-bold mt-0.5">•</span>
-                        <span>{pt}</span>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-
-                <div className="pt-4 border-t border-pink-100 flex items-center justify-between">
-                  <button
-                    onClick={onOpenDownload}
-                    className="text-xs font-bold text-rose-600 hover:text-rose-700 flex items-center space-x-1"
-                  >
-                    <span>Get on Mobile</span>
-                    <ArrowRight className="w-3 h-3" />
-                  </button>
-
-                  <button
-                    onClick={onNavigatePricing}
-                    className="text-xs font-bold text-gray-700 hover:text-gray-900"
-                  >
-                    See Pricing (₹49)
-                  </button>
-                </div>
+        {/* Single Centered Product Card: Shakti */}
+        <div className="bg-white rounded-3xl p-8 sm:p-12 border-2 border-rose-200/90 shadow-[0_20px_50px_rgba(244,63,94,0.12)] space-y-8">
+          
+          {/* Card Header */}
+          <div className="flex flex-wrap items-center justify-between gap-4 pb-6 border-b border-pink-100">
+            <div className="flex items-center space-x-4">
+              <div className="w-14 h-14 rounded-2xl bg-gradient-to-tr from-pink-500 to-rose-600 p-0.5 shadow-md flex items-center justify-center">
+                <img 
+                  src="/app_logo.png" 
+                  alt="Shakti App" 
+                  className="w-full h-full object-cover rounded-[14px] bg-white"
+                  onError={(e) => {
+                    e.target.onerror = null;
+                    e.target.src = '/shield.svg';
+                  }}
+                />
               </div>
-            );
-          })}
+              <div>
+                <div className="flex items-center space-x-2">
+                  <h2 className="text-2xl sm:text-3xl font-extrabold text-gray-950 font-display">Shakti</h2>
+                  <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                </div>
+                <p className="text-xs text-gray-500 font-medium">Autonomous Protection & 112 Police Gateway</p>
+              </div>
+            </div>
+
+            <span className="text-xs font-extrabold uppercase tracking-wider text-rose-700 bg-rose-50 px-3.5 py-1 rounded-full border border-rose-200">
+              Free & Pro Available
+            </span>
+          </div>
+
+          {/* Capabilities List */}
+          <div className="space-y-4">
+            <h3 className="text-xs font-extrabold uppercase tracking-wider text-gray-900 font-mono">
+              Core All-in-One Safety Capabilities:
+            </h3>
+
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 text-xs sm:text-sm font-semibold text-gray-800">
+              {points.map((pt, idx) => (
+                <div key={idx} className="flex items-start space-x-2.5 p-3 rounded-2xl bg-rose-50/50 border border-pink-100">
+                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                  <span>{pt}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+
+          {/* Bottom Action Row */}
+          <div className="pt-4 border-t border-pink-100 flex flex-wrap items-center justify-between gap-4">
+            <button
+              onClick={onOpenDownload}
+              className="bg-gray-950 hover:bg-black text-white px-8 py-3.5 rounded-2xl font-bold text-sm shadow-md hover:scale-105 transition-all flex items-center space-x-2.5"
+            >
+              <Download className="w-4 h-4 text-gray-300" />
+              <span>Download Shakti App</span>
+            </button>
+
+            <button
+              onClick={onNavigatePricing}
+              className="text-sm font-bold text-rose-600 hover:text-rose-700 flex items-center space-x-1.5"
+            >
+              <span>See Pricing (Free & ₹49/mo)</span>
+              <ArrowRight className="w-4 h-4" />
+            </button>
+          </div>
+
         </div>
 
       </div>

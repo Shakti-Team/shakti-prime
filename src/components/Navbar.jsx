@@ -142,6 +142,19 @@ export default function Navbar({ currentPage, setCurrentPage, onOpenDownload }) 
                         </button>
 
                         <button 
+                          onClick={() => navigateTo('home', 'social-hub')}
+                          className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-emerald-50/60 transition-colors group"
+                        >
+                          <div className="w-7 h-7 rounded-lg bg-emerald-50 text-emerald-600 flex items-center justify-center shrink-0">
+                            <Users className="w-3.5 h-3.5" />
+                          </div>
+                          <div>
+                            <div className="text-xs font-bold text-gray-900 group-hover:text-emerald-600">Safe Social Hub</div>
+                            <div className="text-[10px] text-gray-500">Verified Women Circles</div>
+                          </div>
+                        </button>
+
+                        <button 
                           onClick={() => navigateTo('home', 'empowerment-hub')}
                           className="w-full text-left flex items-center space-x-3 p-2 rounded-xl hover:bg-purple-50/60 transition-colors group"
                         >

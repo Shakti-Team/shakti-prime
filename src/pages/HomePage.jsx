@@ -2,9 +2,9 @@ import React from 'react';
 import { Smartphone } from 'lucide-react';
 import KineticGridCanvas from '../components/KineticGridCanvas';
 import HeroAppShowcase from '../components/HeroAppShowcase';
+import DualAudienceSection from '../components/DualAudienceSection';
 import AntigravityProductShowcase from '../components/AntigravityProductShowcase';
 import PersonaVideoCarousel from '../components/PersonaVideoCarousel';
-import LatestBlogsSection from '../components/LatestBlogsSection';
 
 export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigatePricing }) {
   
@@ -73,7 +73,13 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, o
 
       </div>
 
-      {/* The 4 Real Shakti Feature Showcase Sections: Voice Sentinel AI, Parenting & Child Protection, Safe Social Hub, Community & Self Improvement */}
+      {/* Dual Audience Section (Image 1: For individuals & For organizations with swirling particle vortex) */}
+      <DualAudienceSection 
+        onOpenDownload={onOpenDownload}
+        onNavigateEnterprise={() => scrollToSection('enterprise')}
+      />
+
+      {/* The 4 Real Shakti Feature Showcase Sections (All with Text Left & Phone Right) */}
       <AntigravityProductShowcase 
         onOpenDownload={onOpenDownload}
         onOpenVideo={onOpenVideo}
@@ -82,12 +88,6 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, o
       {/* Persona Video Stories Carousel */}
       <PersonaVideoCarousel onOpenVideo={onOpenVideo} />
 
-      {/* Latest Blogs & Releases Section — temporarily hidden */}
-      {/* <LatestBlogsSection onOpenPrivacy={onOpenPrivacy} /> */}
-
     </div>
   );
 }
-
-
-

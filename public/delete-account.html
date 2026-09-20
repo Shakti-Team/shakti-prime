@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Account & Data Deletion Request — Shakti Women Safety App</title>
+  <link rel="icon" type="image/png" href="/app_logo.png" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --primary: #e11d48;
+      --primary-dark: #be123c;
+      --bg: #0b0f19;
+      --card-bg: #111827;
+      --card-border: #1f2937;
+      --text-main: #f3f4f6;
+      --text-muted: #9ca3af;
+      --accent: #10b981;
+    }
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+    body {
+      font-family: 'Plus Jakarta Sans', sans-serif;
+      background-color: var(--bg);
+      color: var(--text-main);
+      line-height: 1.7;
+      padding: 2rem 1rem;
+    }
+    .container {
+      max-width: 860px;
+      margin: 0 auto;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-radius: 24px;
+      padding: 3rem 2.5rem;
+      box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+    }
+    .header {
+      display: flex;
+      align-items: center;
+      gap: 1.25rem;
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 2rem;
+      margin-bottom: 2.5rem;
+    }
+    .logo {
+      width: 64px;
+      height: 64px;
+      border-radius: 16px;
+      object-fit: cover;
+      border: 2px solid var(--primary);
+    }
+    h1 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 2rem;
+      font-weight: 800;
+      color: #fff;
+      letter-spacing: -0.02em;
+    }
+    .badge {
+      display: inline-block;
+      background: rgba(225, 29, 72, 0.15);
+      color: #fb7185;
+      font-size: 0.8rem;
+      font-weight: 600;
+      padding: 0.25rem 0.75rem;
+      border-radius: 9999px;
+      margin-top: 0.35rem;
+      border: 1px solid rgba(225, 29, 72, 0.3);
+    }
+    h2 {
+      font-family: 'Outfit', sans-serif;
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: #fff;
+      margin: 2rem 0 1rem;
+      display: flex;
+      align-items: center;
+      gap: 0.5rem;
+    }
+    h2::before {
+      content: "";
+      display: inline-block;
+      width: 4px;
+      height: 1.2rem;
+      background: var(--primary);
+      border-radius: 2px;
+    }
+    p, li {
+      color: var(--text-muted);
+      margin-bottom: 1rem;
+      font-size: 0.975rem;
+    }
+    ol, ul {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+    }
+    li {
+      margin-bottom: 0.75rem;
+    }
+    strong {
+      color: var(--text-main);
+    }
+    .step-box {
+      background: #1a2234;
+      border: 1px solid #2d3748;
+      border-radius: 16px;
+      padding: 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .step-box h3 {
+      color: #fb7185;
+      font-size: 1.1rem;
+      margin-bottom: 0.75rem;
+    }
+    .info-card {
+      background: rgba(16, 185, 129, 0.08);
+      border: 1px solid rgba(16, 185, 129, 0.25);
+      border-radius: 16px;
+      padding: 1.25rem 1.5rem;
+      margin: 1.5rem 0;
+    }
+    .info-card h4 {
+      color: #34d399;
+      margin-bottom: 0.5rem;
+    }
+    .info-card p {
+      color: #d1fae5;
+      margin-bottom: 0;
+      font-size: 0.925rem;
+    }
+    .email-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.5rem;
+      background: var(--primary);
+      color: #fff;
+      font-weight: 600;
+      padding: 0.75rem 1.5rem;
+      border-radius: 12px;
+      text-decoration: none;
+      margin-top: 0.75rem;
+      transition: background 0.2s;
+    }
+    .email-btn:hover {
+      background: var(--primary-dark);
+      text-decoration: none;
+    }
+    a {
+      color: #fb7185;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
+    .footer {
+      text-align: center;
+      margin-top: 3rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid var(--card-border);
+      font-size: 0.85rem;
+      color: #6b7280;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    
+    <!-- Header -->
+    <div class="header">
+      <img src="/app_logo.png" alt="Shakti Logo" class="logo" onerror="this.src='/shield.svg'">
+      <div>
+        <h1>Shakti — Account & Data Deletion</h1>
+        <div class="badge">Google Play Data Safety Compliant</div>
+      </div>
+    </div>
+
+    <p>At <strong>Shakti Safety</strong>, we respect your privacy and provide you with complete control over your account and personal data. As per Google Play's User Data & Data Safety Policy, this page explains how you can permanently delete your Shakti account and associated personal telemetry records.</p>
+
+    <!-- Option 1: In-App Deletion -->
+    <h2>Option 1: In-App Account Deletion (Instant)</h2>
+    <div class="step-box">
+      <h3>📱 How to delete your account directly inside the Shakti App:</h3>
+      <ol>
+        <li>Open the <strong>Shakti Mobile App</strong> on your Android device.</li>
+        <li>Tap on your <strong>Profile / Settings</strong> icon in the navigation bar.</li>
+        <li>Scroll down to the <strong>Account & Security</strong> section.</li>
+        <li>Tap on <strong>"Delete Account & Wipe Data"</strong>.</li>
+        <li>Confirm your decision. Your account, authentication credentials, emergency contacts, and journey history will be wiped immediately.</li>
+      </ol>
+    </div>
+
+    <!-- Option 2: Web / Email Request -->
+    <h2>Option 2: Web / Email Deletion Request (If App is Uninstalled)</h2>
+    <div class="step-box">
+      <h3>✉️ Request Permanent Account & Data Deletion via Email:</h3>
+      <p>If you have uninstalled the app or cannot access your device, you can submit a manual deletion request to our Data Protection Officer:</p>
+      <ul>
+        <li>Send an email to: <strong><a href="mailto:TeamSamayshakti.ai.in@gmail.com?subject=Account%20and%20Data%20Deletion%20Request">TeamSamayshakti.ai.in@gmail.com</a></strong></li>
+        <li><strong>Subject:</strong> Account and Data Deletion Request - Shakti App</li>
+        <li><strong>Body Details:</strong> Mention your registered phone number or Google Sign-In email associated with your Shakti account.</li>
+      </ul>
+      <a href="mailto:TeamSamayshakti.ai.in@gmail.com?subject=Account%20and%20Data%20Deletion%20Request&body=Please%20delete%20my%20Shakti%20account%20and%20all%20associated%20data.%0A%0ARegistered%20Email%2FPhone%3A%20" class="email-btn">
+        Submit Deletion Request Email
+      </a>
+      <p style="margin-top: 1rem; font-size: 0.85rem; color: #9ca3af;">
+        <em>Processing Time:</em> Manual deletion requests are validated and permanently purged within <strong>48 to 72 hours</strong>.
+      </p>
+    </div>
+
+    <!-- What Data is Deleted -->
+    <h2>What Data Is Deleted Upon Request</h2>
+    <ul>
+      <li><strong>Personal Profile:</strong> Full name, profile photo, registered email, and mobile phone number.</li>
+      <li><strong>Emergency Contacts:</strong> All saved guardian phone numbers and pairing tokens.</li>
+      <li><strong>GPS Location Telemetry:</strong> All historical GPS breadcrumbs, Safe Walk journey logs, and emergency SOS event markers.</li>
+      <li><strong>Authentication Tokens:</strong> All active sessions, Firebase/Google authentication tokens, and on-device secure keys.</li>
+    </ul>
+
+    <!-- Retention Policy -->
+    <div class="info-card">
+      <h4>🔒 Data Retention & Purge Commitment</h4>
+      <p>Shakti does not retain your location telemetry, personal contacts, or audio files after your account is deleted. All server records and associated backups are irreversibly removed from our systems.</p>
+    </div>
+
+    <!-- Links -->
+    <p style="margin-top: 2rem;">
+      Read our full <a href="/privacy-policy.html">Privacy Policy</a> or return to our <a href="/">Homepage</a>.
+    </p>
+
+    <!-- Footer -->
+    <div class="footer">
+      <p>© 2026 Shakti Safety Platform (shaktisafety.in). All rights reserved.</p>
+    </div>
+
+  </div>
+</body>
+</html>

@@ -131,16 +131,15 @@ export default function DownloadModal({ isOpen, onClose }) {
             <ExternalLink className="w-4 h-4 text-gray-400 group-hover:text-white transition-colors" />
           </a>
 
-          <button
-            onClick={() => {
-              alert('Starting download of Shakti_v2.4.0_Release.apk (14.2 MB)...');
-              onClose();
-            }}
+          <a
+            href="/shakti-release.apk"
+            download="Shakti-Release.apk"
+            onClick={onClose}
             className="w-full flex items-center justify-center space-x-2 py-3 rounded-2xl bg-gray-100 hover:bg-gray-200 text-gray-800 text-xs font-semibold font-mono transition-colors"
           >
             <Download className="w-4 h-4 text-gray-600" />
-            <span>Direct APK Download (v2.4.0 - 14.2MB)</span>
-          </button>
+            <span>Direct APK Download (Shakti-Release.apk)</span>
+          </a>
 
         </div>
 

@@ -9,6 +9,7 @@ import {
   Radio,
   ArrowRight,
   UserCheck,
+  Users,
   Award
 } from 'lucide-react';
 

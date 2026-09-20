@@ -142,10 +142,6 @@ export default function KineticGridCanvas({ themeMode = 'shakti', className = ''
 
       ctx.clearRect(0, 0, W, H);
 
-      // Background fill
-      ctx.fillStyle = theme.bg;
-      ctx.fillRect(0, 0, W, H);
-
       // Background subtle dot texture
       ctx.fillStyle = theme.dotColor;
       for (let x = DOT_SPACING / 2; x < W; x += DOT_SPACING) {
@@ -360,11 +356,7 @@ export default function KineticGridCanvas({ themeMode = 'shakti', className = ''
   return (
     <canvas
       ref={canvasRef}
-      className={`pointer-events-none ${className || 'absolute inset-0 w-full h-full z-0'}`}
-      style={{
-        maskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-        WebkitMaskImage: 'linear-gradient(to bottom, rgba(0,0,0,1) 75%, rgba(0,0,0,0) 100%)',
-      }}
+      className={`pointer-events-none opacity-80 ${className || 'absolute inset-0 w-full h-full z-0'}`}
     />
   );
 }

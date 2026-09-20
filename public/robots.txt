@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Host
+Host: https://shaktisafety.in
+
+# Sitemaps
+Sitemap: https://shaktisafety.in/sitemap.xml

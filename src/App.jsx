@@ -54,6 +54,7 @@ export default function App() {
             onOpenVideo={() => setVideoModalOpen(true)}
             onNavigatePricing={() => handlePageChange('pricing')}
             onNavigateProducts={() => handlePageChange('products')}
+            onNavigateEnterprise={() => handlePageChange('enterprise')}
             onOpenPrivacy={() => setPrivacyModalOpen(true)}
           />
         )}

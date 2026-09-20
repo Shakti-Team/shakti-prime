@@ -54,7 +54,7 @@ export default function AntigravityProductShowcase() {
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="max-w-4xl">
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-normal text-gray-950 tracking-tight leading-[1.14] font-sans">
-            Shakti is our women safety and autonomous emergency response platform, allowing anyone to feel protected in the AI-first era.
+            Shakti is our unified safety, guardian network & community commerce platform — protecting women, connecting families, and empowering local merchants in the AI-first era.
             <span className="inline-block w-[3px] h-[0.9em] ml-2 align-middle bg-rose-500 animate-pulse rounded-full"></span>
           </h2>
         </div>

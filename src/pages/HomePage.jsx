@@ -6,7 +6,7 @@ import DualAudienceSection from '../components/DualAudienceSection';
 import AntigravityProductShowcase from '../components/AntigravityProductShowcase';
 import PersonaVideoCarousel from '../components/PersonaVideoCarousel';
 
-export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigatePricing }) {
+export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigatePricing, onNavigateEnterprise }) {
   
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -38,12 +38,12 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, o
                 e.target.src = '/shield.svg';
               }}
             />
-            <span className="text-xs font-bold text-gray-900 font-display tracking-tight">Shakti Safety</span>
+            <span className="text-xs font-bold text-gray-900 font-display tracking-tight">Shakti Platform</span>
           </div>
 
           {/* Main Headline */}
           <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-950 tracking-tight leading-[1.08] mb-8 font-sans">
-            Experience safety with the next-gen protection platform
+            Experience safety & community with the next-gen platform
           </h1>
 
           {/* Dual Iconic Pills */}
@@ -73,10 +73,10 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, o
 
       </div>
 
-      {/* Dual Audience Section (Image 1: For individuals & For organizations with swirling particle vortex) */}
+      {/* Dual Audience Section */}
       <DualAudienceSection 
         onOpenDownload={onOpenDownload}
-        onNavigateEnterprise={() => scrollToSection('enterprise')}
+        onNavigateEnterprise={onNavigateEnterprise}
       />
 
       {/* The 4 Real Shakti Feature Showcase Sections (All with Text Left & Phone Right) */}

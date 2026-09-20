@@ -9,30 +9,30 @@ export default function PersonaVideoCarousel({ onOpenVideo }) {
       id: 'student',
       title: 'College Student',
       subtitle: 'Build daily safety habits with autonomous voice keyword detection and hands-free anomaly alerts during campus and metro commutes.',
-      roleTag: 'Student & Commuter',
+      roleTag: 'Women & Commuters',
       image: 'https://images.unsplash.com/photo-1534528741775-53994a69daeb?auto=format&fit=crop&w=800&q=80',
       gradient: 'from-black/80 via-black/30 to-transparent'
     },
     {
-      id: 'corporate',
-      title: 'Corporate Professional',
-      subtitle: 'Corridor geo-fencing and taxi route deviation alerts automatically monitor late-night cab commutes and corporate travel.',
-      roleTag: 'Corporate Employee',
-      image: 'https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?auto=format&fit=crop&w=800&q=80',
-      gradient: 'from-black/80 via-black/30 to-transparent'
-    },
-    {
       id: 'guardian',
-      title: 'Family Guardian',
-      subtitle: 'Parallel low-latency telemetry mesh syncs battery, speed, and live location across family members with sub-second alert relays.',
-      roleTag: 'Parent & Guardian',
+      title: 'Father & Family Guardian',
+      subtitle: 'Real-time telemetry mesh syncs battery, speed, and live location with loud SOS sirens that override phone silent mode.',
+      roleTag: 'Parents & Guardians',
       image: 'https://images.unsplash.com/photo-1500648767791-00dcc994a43e?auto=format&fit=crop&w=800&q=80',
       gradient: 'from-black/80 via-black/30 to-transparent'
     },
     {
+      id: 'merchant',
+      title: 'Local Shop & Cafe Partner',
+      subtitle: 'Post daily product offers with 1-tap WhatsApp orders, earn verified gold badges, and provide Safe Haven shelter for nearby citizens.',
+      roleTag: 'Shakti Prime Merchant',
+      image: 'https://images.unsplash.com/photo-1556742049-0a67c5574f73?auto=format&fit=crop&w=800&q=80',
+      gradient: 'from-black/80 via-black/30 to-transparent'
+    },
+    {
       id: 'admin',
-      title: 'Campus Security Lead',
-      subtitle: 'Deploy unified Bluetooth mesh beacons, safe zone geofencing, and rapid 112 police gateway dispatch across institutions.',
+      title: 'Corporate & Campus Lead',
+      subtitle: 'Deploy corporate cab commute tracking, geo-fenced safe zones, and rapid 112 police gateway dispatch across organizations.',
       roleTag: 'Enterprise Administrator',
       image: 'https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?auto=format&fit=crop&w=800&q=80',
       gradient: 'from-black/80 via-black/30 to-transparent'
@@ -47,22 +47,22 @@ export default function PersonaVideoCarousel({ onOpenVideo }) {
   };
 
   return (
-    <section className="py-20 sm:py-28 bg-white relative overflow-hidden">
+    <section className="py-20 sm:py-28 bg-white relative overflow-hidden border-t border-gray-100">
       
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        {/* Top Header Split matching Image 3 */}
+        {/* Top Header Split */}
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-16 items-start mb-12 sm:mb-16">
           
-          <div className="lg:col-span-6">
-            <h2 className="text-3xl sm:text-4xl lg:text-[46px] font-medium text-gray-950 tracking-tight leading-[1.12] font-sans">
-              Built for women & guardians for the agent-first era
+          <div className="lg:col-span-7">
+            <h2 className="text-3xl sm:text-4xl lg:text-[44px] font-semibold text-gray-950 tracking-tight leading-[1.18] font-sans break-words">
+              Built for women, guardians & local businesses in the AI era
             </h2>
           </div>
 
-          <div className="lg:col-span-6">
+          <div className="lg:col-span-5">
             <p className="text-sm sm:text-base text-gray-600 font-normal leading-relaxed">
-              Shakti is built for user trust, whether you're a college student commuting late at night, a corporate employee traveling in ride-shares, an enterprise campus administrator, or a family guardian keeping loved ones safe.
+              Shakti connects all stakeholders in one trusted ecosystem — protecting women commuters, empowering family guardians with live telemetry, and helping local shops post verified deals and offer Safe Havens.
             </p>
           </div>
 

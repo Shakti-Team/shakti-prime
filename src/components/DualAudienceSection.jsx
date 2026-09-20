@@ -55,8 +55,9 @@ export default function DualAudienceSection({ onOpenDownload, onNavigateEnterpri
     let angle = 0;
 
     const render = () => {
+      ctx.globalAlpha = 1.0;
       ctx.clearRect(0, 0, width, height);
-      angle += 0.008;
+      angle = (angle + 0.008) % (Math.PI * 2);
 
       vortices.forEach((vortex, vIdx) => {
         for (let i = 0; i < vortex.dots; i++) {
@@ -86,6 +87,7 @@ export default function DualAudienceSection({ onOpenDownload, onNavigateEnterpri
           ctx.fill();
         }
       });
+      ctx.globalAlpha = 1.0;
 
       animationId = requestAnimationFrame(render);
     };
@@ -123,10 +125,10 @@ export default function DualAudienceSection({ onOpenDownload, onNavigateEnterpri
 
             {/* Title */}
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-950 tracking-tight font-display mb-2 leading-tight">
-              For individuals
+              For citizens & guardians
             </h3>
             <h4 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-700 tracking-tight font-display mb-8">
-              Feel protected anywhere
+              Women safety & family guardian network
             </h4>
 
             {/* Action Pill */}
@@ -135,37 +137,40 @@ export default function DualAudienceSection({ onOpenDownload, onNavigateEnterpri
               className="bg-gray-950 hover:bg-black text-white px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2"
             >
               <Download className="w-4 h-4 text-gray-300" />
-              <span>Download</span>
+              <span>Download Free</span>
             </button>
 
           </div>
 
-          {/* Right Column: For Organizations */}
+          {/* Right Column: For Shops & Organizations */}
           <div className="flex flex-col items-center justify-center p-8 sm:p-12 rounded-3xl bg-white/70 backdrop-blur-xs border border-gray-100/60 shadow-xs hover:bg-white/90 transition-all">
             
             {/* Pill Badge */}
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-gray-50 border border-gray-200/80 text-xs font-medium text-gray-700 mb-6 shadow-2xs">
-              <span>Now Available!</span>
+            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-xs font-medium text-amber-900 mb-6 shadow-2xs">
+              <span>Shakti Prime Partner</span>
             </div>
 
             {/* Title */}
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-950 tracking-tight font-display mb-2 leading-tight">
-              For organizations
+              For shops & businesses
             </h3>
             <h4 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-700 tracking-tight font-display mb-8">
-              Level up your entire team
+              Post deals, WhatsApp orders & Safe Havens
             </h4>
 
             {/* Action Pill */}
             <button
               onClick={() => {
-                const el = document.getElementById('enterprise');
-                if (el) el.scrollIntoView({ behavior: 'smooth' });
-                else if (onNavigateEnterprise) onNavigateEnterprise();
+                if (onNavigateEnterprise) {
+                  onNavigateEnterprise();
+                } else {
+                  const el = document.getElementById('enterprise');
+                  if (el) el.scrollIntoView({ behavior: 'smooth' });
+                }
               }}
               className="bg-[#F1F3F4] hover:bg-[#E8EAED] text-gray-900 px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-2xs hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2"
             >
-              <span>Read More</span>
+              <span>Explore Partner Suite</span>
               <ArrowRight className="w-4 h-4 text-gray-600" />
             </button>
 

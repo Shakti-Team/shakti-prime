@@ -21,16 +21,16 @@ export default function Hero({ onOpenDownload, onOpenVideo, onOpenPricing }) {
           <div className="w-5 h-5 rounded-full bg-gradient-to-tr from-pink-500 to-rose-500 flex items-center justify-center text-white shadow-xs">
             <Heart className="w-3 h-3 fill-current text-white" />
           </div>
-          <span className="text-xs font-bold text-gray-800 tracking-tight font-display">Shakti Safety & Emergency Platform</span>
+          <span className="text-xs font-bold text-gray-800 tracking-tight font-display">SHAKTI ONE — Safety for Everyone</span>
           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
           <span className="text-xs text-rose-600 font-semibold">Pro starting ₹49/mo</span>
         </div>
 
         {/* Main Headline */}
         <h1 className="text-4xl sm:text-6xl lg:text-7xl font-extrabold text-gray-950 tracking-tight leading-[1.08] mb-6">
-          Empowering Every Woman with{' '}
+          Empowering Everyone with{' '}
           <span className="bg-gradient-to-r from-rose-600 via-pink-600 to-rose-500 bg-clip-text text-transparent">
-            Shakti
+            SHAKTI ONE
           </span>
           <span className="block mt-2 font-bold text-gray-900 text-3xl sm:text-5xl lg:text-6xl">
             Autonomous Safety & Emergency Protection.
@@ -49,7 +49,7 @@ export default function Hero({ onOpenDownload, onOpenVideo, onOpenPricing }) {
             className="group flex items-center space-x-2.5 bg-gray-900 hover:bg-black text-white px-7 py-3.5 rounded-full font-bold text-sm sm:text-base shadow-lg hover:scale-105 active:scale-95 transition-all duration-200"
           >
             <Smartphone className="w-4 h-4 sm:w-5 sm:h-5 text-rose-400" />
-            <span>Download Shakti Free</span>
+            <span>Download SHAKTI ONE Free</span>
             <ArrowRight className="w-4 h-4 text-gray-400 group-hover:translate-x-1 transition-transform" />
           </button>
 
@@ -67,7 +67,7 @@ export default function Hero({ onOpenDownload, onOpenVideo, onOpenPricing }) {
             onClick={onOpenPricing}
             className="flex items-center space-x-1.5 bg-rose-50 hover:bg-rose-100 text-rose-700 px-5 py-3.5 rounded-full font-bold text-sm border border-rose-200 transition-all"
           >
-            <span>Shakti Pro (₹49/mo)</span>
+            <span>SHAKTI ONE Pro (₹49/mo)</span>
             <ArrowRight className="w-3.5 h-3.5" />
           </button>
         </div>

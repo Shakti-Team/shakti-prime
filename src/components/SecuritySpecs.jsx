@@ -13,12 +13,12 @@ export default function SecuritySpecs() {
     {
       icon: Lock,
       title: 'Zero-Knowledge Cryptography',
-      desc: 'Location telemetry is encrypted with ephemeral keys on device. Not even Shakti servers can decrypt your live GPS stream without explicit guardian key handshake.'
+      desc: 'Location telemetry is encrypted with ephemeral keys on device. Not even SHAKTI ONE servers can decrypt your live GPS stream without explicit guardian key handshake.'
     },
     {
       icon: WifiOff,
       title: 'Dual-Channel Offline Failover',
-      desc: 'In zero-connectivity or network jamming zones, Shakti automatically packages compressed GPS distress payloads over encrypted GSM cellular SMS.'
+      desc: 'In zero-connectivity or network jamming zones, SHAKTI ONE automatically packages compressed GPS distress payloads over encrypted GSM cellular SMS.'
     },
     {
       icon: Bluetooth,
@@ -87,7 +87,7 @@ export default function SecuritySpecs() {
               Open Safety SDK for IoT & Wearables
             </div>
             <h4 className="text-2xl font-bold font-display">
-              Integrate Shakti Panic Triggers into Hardware Devices
+              Integrate SHAKTI ONE Panic Triggers into Hardware Devices
             </h4>
             <p className="text-sm text-gray-400">
               Build smart jewelry, campus beacons, or automotive panic triggers using our lightweight C++ and React Native SDK.

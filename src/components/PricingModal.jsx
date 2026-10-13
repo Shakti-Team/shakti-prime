@@ -64,7 +64,7 @@ export default function PricingModal({ isOpen, onClose, onOpenDownload }) {
           <div className="rounded-2xl p-6 bg-gray-50 border border-gray-200 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-xl font-bold text-gray-900">Shakti Free</h4>
+                <h4 className="text-xl font-bold text-gray-900">SHAKTI ONE Free</h4>
                 <span className="text-xs font-bold text-gray-600 bg-gray-200 px-2.5 py-0.5 rounded-full">₹0</span>
               </div>
               <p className="text-xs text-gray-500 mb-4">Core Emergency Protection</p>
@@ -101,7 +101,7 @@ export default function PricingModal({ isOpen, onClose, onOpenDownload }) {
           <div className="rounded-2xl p-6 bg-white border-2 border-rose-500 shadow-lg shadow-rose-500/10 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h4 className="text-xl font-bold text-gray-900">Shakti Pro</h4>
+                <h4 className="text-xl font-bold text-gray-900">SHAKTI ONE Pro</h4>
                 <span className="text-xs font-bold text-rose-700 bg-rose-100 px-2.5 py-0.5 rounded-full">
                   {billingCycle === 'yearly' ? '₹399/yr' : '₹49/mo'}
                 </span>
@@ -136,7 +136,7 @@ export default function PricingModal({ isOpen, onClose, onOpenDownload }) {
               onClick={() => { onClose(); onOpenDownload(); }}
               className="w-full py-3 bg-gradient-to-r from-rose-600 to-pink-600 hover:from-rose-700 hover:to-pink-700 text-white rounded-xl font-bold text-xs shadow-md shadow-rose-600/30 transition-all"
             >
-              Get Shakti Pro (₹49)
+              Get SHAKTI ONE Pro (₹49)
             </button>
           </div>
 

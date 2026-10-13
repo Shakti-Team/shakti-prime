@@ -66,7 +66,7 @@ export default function BusinessModelSection() {
             <span>Sustainable Growth & Economics</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-950 tracking-tight">
-            How Shakti Sustains & Scales Its Mission
+            How SHAKTI ONE Sustains & Scales Its Mission
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
             A resilient multi-tiered business model designed to keep life-saving protection universally accessible while building a highly profitable, scalable enterprise.
@@ -83,7 +83,7 @@ export default function BusinessModelSection() {
               <span>The Critical Problem</span>
             </div>
             <h3 className="text-xl font-bold text-gray-900">
-              Women Safety Gaps in Real-World Crises
+              Personal Safety Gaps in Real-World Crises
             </h3>
             <ul className="space-y-2.5 text-xs sm:text-sm text-gray-700">
               <li className="flex items-start space-x-2">
@@ -105,7 +105,7 @@ export default function BusinessModelSection() {
           <div className="bg-emerald-50/60 rounded-3xl p-7 border border-emerald-100 space-y-4">
             <div className="flex items-center space-x-2 text-emerald-700 font-extrabold text-xs uppercase tracking-wider">
               <CheckCircle2 className="w-4 h-4" />
-              <span>The Shakti Solution</span>
+              <span>The SHAKTI ONE Solution</span>
             </div>
             <h3 className="text-xl font-bold text-gray-900">
               Autonomous & Zero-Friction Emergency Grid

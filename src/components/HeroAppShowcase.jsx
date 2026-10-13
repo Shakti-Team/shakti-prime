@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import {
   Play,
+  Shield,
   ShieldAlert,
   Mic,
   Radio,
@@ -86,7 +87,7 @@ export default function HeroAppShowcase({ onOpenVideo }) {
             <div className="w-6 h-6 rounded-full bg-gradient-to-tr from-rose-600 to-pink-500 text-white flex items-center justify-center shadow-xs">
               <Play className="w-3 h-3 fill-current translate-x-0.5" />
             </div>
-            <span className="font-display tracking-tight">Watch Shakti Video Overview</span>
+            <span className="font-display tracking-tight">Watch SHAKTI ONE Video Overview</span>
             <span className="text-[11px] bg-rose-50 text-rose-700 px-2 py-0.5 rounded-full font-mono font-bold border border-rose-200/60">2:15 Tour</span>
           </button>
         </div>
@@ -97,25 +98,17 @@ export default function HeroAppShowcase({ onOpenVideo }) {
           {/* Top Control Bar with Tabs */}
           <div className="flex flex-wrap items-center justify-between gap-4 border-b border-pink-100 pb-5 mb-6">
             
-            {/* Status Label & Logo */}
+            {/* Status Label & Icon */}
             <div className="flex items-center space-x-3">
-              <div className="w-8 h-8 rounded-xl bg-gradient-to-tr from-pink-500 to-rose-600 p-0.5 shadow-sm flex items-center justify-center">
-                <img 
-                  src="/app_logo.png" 
-                  alt="Shakti App" 
-                  className="w-full h-full object-cover rounded-[10px] bg-white"
-                  onError={(e) => {
-                    e.target.onerror = null;
-                    e.target.src = '/shield.svg';
-                  }}
-                />
+              <div className="w-9 h-9 sm:w-10 sm:h-10 rounded-xl bg-gray-950 flex items-center justify-center text-white shrink-0 shadow-xs">
+                <Shield className="w-5 h-5 text-white" />
               </div>
               <div>
                 <div className="flex items-center space-x-2">
-                  <span className="text-sm font-bold text-gray-900">Shakti Mobile Active Defense</span>
+                  <span className="text-sm font-bold text-gray-900">SHAKTI ONE Interactive Platform</span>
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-pulse"></span>
                 </div>
-                <p className="text-[11px] text-gray-500 font-mono">Live WebSocket & SMS Mesh Engine Online</p>
+                <p className="text-[11px] text-gray-500 font-mono">Friend Chat • Local Community • Live Telemetry</p>
               </div>
             </div>
 
@@ -188,7 +181,7 @@ export default function HeroAppShowcase({ onOpenVideo }) {
                     Instant One-Tap & Hardware Triple-Click Trigger
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    In distress, tap the SOS button or press your phone’s power button 3 times. Shakti instantly broadcasts live encrypted GPS coordinates, starts continuous audio recording, and alerts police & verified guardians simultaneously.
+                    In distress, tap the SOS button or press your phone’s power button 3 times. SHAKTI ONE instantly broadcasts live encrypted GPS coordinates, starts continuous audio recording, and alerts police & verified guardians simultaneously.
                   </p>
 
                   <div className="bg-rose-50/60 rounded-2xl p-4 border border-rose-100 space-y-2 text-xs">
@@ -286,7 +279,7 @@ export default function HeroAppShowcase({ onOpenVideo }) {
                     Corridor Geo-Fencing & Deviation Alert
                   </h3>
                   <p className="text-sm text-gray-600 leading-relaxed">
-                    Travelling late in a cab or walking through isolated areas? Shakti locks onto your scheduled transit corridor. If your cab deviates from the route or stops unexpectedly for &gt;2 minutes, automated check-ins trigger immediately.
+                    Travelling late in a cab or walking through isolated areas? SHAKTI ONE locks onto your scheduled transit corridor. If your cab deviates from the route or stops unexpectedly for &gt;2 minutes, automated check-ins trigger immediately.
                   </p>
 
                   <div className="bg-emerald-50/60 rounded-2xl p-3.5 border border-emerald-100 space-y-1.5 text-xs">
@@ -322,17 +315,11 @@ export default function HeroAppShowcase({ onOpenVideo }) {
                   {/* Mobile Header */}
                   <div className="flex items-center justify-between pb-3 border-b border-pink-100">
                     <div className="flex items-center space-x-2">
-                      <img 
-                        src="/app_logo.png" 
-                        alt="Shakti App" 
-                        className="w-7 h-7 rounded-lg object-cover"
-                        onError={(e) => {
-                          e.target.onerror = null;
-                          e.target.src = '/shield.svg';
-                        }}
-                      />
+                      <div className="w-7 h-7 rounded-lg bg-gray-950 flex items-center justify-center text-white shadow-2xs">
+                        <Shield className="w-3.5 h-3.5 text-white" />
+                      </div>
                       <div>
-                        <div className="text-xs font-bold text-gray-900">Shakti Mobile</div>
+                        <div className="text-xs font-bold text-gray-900">SHAKTI ONE Mobile</div>
                         <div className="text-[10px] text-emerald-600 font-semibold flex items-center space-x-1">
                           <span className="w-1.5 h-1.5 rounded-full bg-emerald-500"></span>
                           <span>AI Protection Active</span>

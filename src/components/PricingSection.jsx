@@ -47,7 +47,7 @@ export default function PricingSection({ onOpenDownload }) {
             Simple, Transparent & Ultra-Affordable
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-            Essential life-saving protection is 100% free forever. Upgrade to Shakti Pro for just ₹49/month for autonomous AI sentinel and cloud evidence vault.
+            Essential life-saving protection is 100% free forever. Upgrade to SHAKTI ONE Pro for just ₹49/month for autonomous AI sentinel and cloud evidence vault.
           </p>
 
           {/* Billing Cycle Toggle */}
@@ -83,12 +83,12 @@ export default function PricingSection({ onOpenDownload }) {
           <div className="relative rounded-3xl p-7 sm:p-9 bg-white/80 border border-pink-200/80 shadow-sm hover:shadow-xl hover:border-pink-300 transition-all duration-300 flex flex-col justify-between">
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-2xl font-extrabold text-gray-900 font-display">Shakti Free</h3>
+                <h3 className="text-2xl font-extrabold text-gray-900 font-display">SHAKTI ONE Free</h3>
                 <span className="text-xs font-bold text-gray-700 bg-gray-100 px-3 py-1 rounded-full">
                   Forever Free
                 </span>
               </div>
-              <p className="text-xs text-gray-500 font-medium mb-6">Essential Emergency Protection for Every Woman</p>
+              <p className="text-xs text-gray-500 font-medium mb-6">Essential Emergency Protection for Everyone</p>
 
               {/* Price */}
               <div className="flex items-baseline space-x-2 mb-4 pb-6 border-b border-pink-100">
@@ -130,7 +130,7 @@ export default function PricingSection({ onOpenDownload }) {
 
             <div>
               <div className="flex items-center justify-between mb-2">
-                <h3 className="text-2xl font-extrabold text-gray-900 font-display">Shakti Pro</h3>
+                <h3 className="text-2xl font-extrabold text-gray-900 font-display">SHAKTI ONE Pro</h3>
                 <span className="text-xs font-bold text-rose-700 bg-rose-100 px-3 py-1 rounded-full">
                   Only ₹49 / mo
                 </span>

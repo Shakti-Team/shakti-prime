@@ -1,5 +1,5 @@
 import React, { useEffect, useRef } from 'react';
-import { ArrowRight, Download } from 'lucide-react';
+import { Download, ShieldCheck } from 'lucide-react';
 
 /**
  * DualAudienceSection
@@ -111,70 +111,37 @@ export default function DualAudienceSection({ onOpenDownload, onNavigateEnterpri
         className="absolute inset-0 w-full h-full pointer-events-auto opacity-75 z-0"
       />
 
-      <div className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="relative z-10 max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
         
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-12 lg:gap-16 items-center text-center">
+        {/* For Citizens & Guardians Card */}
+        <div className="flex flex-col items-center justify-center p-8 sm:p-14 rounded-3xl bg-white/75 backdrop-blur-sm border border-gray-100/80 shadow-xs hover:bg-white/95 transition-all text-center">
           
-          {/* Left Column: For Individuals */}
-          <div className="flex flex-col items-center justify-center p-8 sm:p-12 rounded-3xl bg-white/70 backdrop-blur-xs border border-gray-100/60 shadow-xs hover:bg-white/90 transition-all">
-            
-            {/* Pill Badge */}
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-gray-50 border border-gray-200/80 text-xs font-medium text-gray-700 mb-6 shadow-2xs">
-              <span>Available at no charge</span>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-950 tracking-tight font-display mb-2 leading-tight">
-              For citizens & guardians
-            </h3>
-            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-700 tracking-tight font-display mb-8">
-              Women safety & family guardian network
-            </h4>
-
-            {/* Action Pill */}
-            <button
-              onClick={onOpenDownload}
-              className="bg-gray-950 hover:bg-black text-white px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2"
-            >
-              <Download className="w-4 h-4 text-gray-300" />
-              <span>Download Free</span>
-            </button>
-
+          {/* Emblem */}
+          <div className="w-14 h-14 mb-5 flex items-center justify-center rounded-2xl bg-gray-950 text-white shadow-md">
+            <ShieldCheck className="w-7 h-7 text-white" />
           </div>
 
-          {/* Right Column: For Shops & Organizations */}
-          <div className="flex flex-col items-center justify-center p-8 sm:p-12 rounded-3xl bg-white/70 backdrop-blur-xs border border-gray-100/60 shadow-xs hover:bg-white/90 transition-all">
-            
-            {/* Pill Badge */}
-            <div className="inline-flex items-center space-x-1.5 px-3 py-1 rounded-full bg-amber-50 border border-amber-200/80 text-xs font-medium text-amber-900 mb-6 shadow-2xs">
-              <span>Shakti Prime Partner</span>
-            </div>
-
-            {/* Title */}
-            <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-950 tracking-tight font-display mb-2 leading-tight">
-              For shops & businesses
-            </h3>
-            <h4 className="text-2xl sm:text-3xl lg:text-4xl font-normal text-gray-700 tracking-tight font-display mb-8">
-              Post deals, WhatsApp orders & Safe Havens
-            </h4>
-
-            {/* Action Pill */}
-            <button
-              onClick={() => {
-                if (onNavigateEnterprise) {
-                  onNavigateEnterprise();
-                } else {
-                  const el = document.getElementById('enterprise');
-                  if (el) el.scrollIntoView({ behavior: 'smooth' });
-                }
-              }}
-              className="bg-[#F1F3F4] hover:bg-[#E8EAED] text-gray-900 px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-2xs hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2"
-            >
-              <span>Explore Partner Suite</span>
-              <ArrowRight className="w-4 h-4 text-gray-600" />
-            </button>
-
+          {/* Pill Badge */}
+          <div className="inline-flex items-center space-x-1.5 px-3.5 py-1 rounded-full bg-gray-50 border border-gray-200/80 text-xs font-medium text-gray-700 mb-6 shadow-2xs">
+            <span>Universal Protection</span>
           </div>
+
+          {/* Title */}
+          <h3 className="text-3xl sm:text-4xl lg:text-5xl font-medium text-gray-950 tracking-tight font-display mb-3 leading-tight">
+            Chat, Connect & Protect Together
+          </h3>
+          <h4 className="text-xl sm:text-2xl lg:text-3xl font-normal text-gray-600 tracking-tight font-display mb-8 max-w-2xl">
+            Private friend chats, local community channels, live location sharing & autonomous protection for everyone
+          </h4>
+
+          {/* Action Pill */}
+          <button
+            onClick={onOpenDownload}
+            className="bg-gray-950 hover:bg-black text-white px-8 py-3.5 rounded-full font-semibold text-sm sm:text-base shadow-md hover:shadow-xl hover:scale-105 active:scale-95 transition-all duration-200 flex items-center space-x-2"
+          >
+            <Download className="w-4 h-4 text-gray-300" />
+            <span>Download Free</span>
+          </button>
 
         </div>
 

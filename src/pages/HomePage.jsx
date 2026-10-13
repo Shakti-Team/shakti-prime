@@ -6,7 +6,7 @@ import DualAudienceSection from '../components/DualAudienceSection';
 import AntigravityProductShowcase from '../components/AntigravityProductShowcase';
 import PersonaVideoCarousel from '../components/PersonaVideoCarousel';
 
-export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigatePricing, onNavigateEnterprise }) {
+export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, onNavigateEnterprise }) {
   
   const scrollToSection = (id) => {
     const el = document.getElementById(id);
@@ -27,24 +27,15 @@ export default function HomePage({ onOpenDownload, onOpenVideo, onOpenPrivacy, o
         {/* Centered Hero Header */}
         <section className="relative z-10 text-center px-4 sm:px-6 lg:px-8 max-w-5xl mx-auto">
           
-          {/* Center Brand Tag: Logo + Shakti */}
-          <div className="inline-flex items-center space-x-2 px-3.5 py-1 rounded-full bg-white/90 border border-gray-200/80 shadow-xs mb-8 hover:border-gray-300 transition-colors">
-            <img 
-              src="/app_logo.png" 
-              alt="Shakti" 
-              className="w-4 h-4 object-contain rounded"
-              onError={(e) => {
-                e.target.onerror = null;
-                e.target.src = '/shield.svg';
-              }}
-            />
-            <span className="text-xs font-bold text-gray-900 font-display tracking-tight">Shakti Platform</span>
-          </div>
-
           {/* Main Headline */}
-          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-950 tracking-tight leading-[1.08] mb-8 font-sans">
-            Experience safety & community with the next-gen platform
+          <h1 className="text-4xl sm:text-6xl lg:text-7xl font-medium text-gray-950 tracking-tight leading-[1.08] mb-6 font-sans">
+            Chat with friends, connect locally & stay protected together
           </h1>
+
+          {/* Subtitle highlighting Friend Chat, Local Chat & Live Location */}
+          <p className="text-base sm:text-xl text-gray-600 max-w-3xl mx-auto mb-10 font-normal leading-relaxed">
+            Private friend chats, hyper-local community rooms, real-time live location sharing, and smart guardian protection — seamlessly united in one modern app.
+          </p>
 
           {/* Dual Iconic Pills */}
           <div className="flex flex-wrap items-center justify-center gap-3 sm:gap-4 mb-12">

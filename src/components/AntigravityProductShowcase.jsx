@@ -1,6 +1,11 @@
 import React from 'react';
 import { 
-  Mic, 
+  PhoneCall,
+  PhoneIncoming,
+  Navigation,
+  Shield,
+  ShieldCheck,
+  Volume2,
   UserCheck, 
   Users, 
   Award, 
@@ -9,7 +14,8 @@ import {
   MapPin,
   MessageSquare,
   Activity,
-  Star
+  Star,
+  Sparkles
 } from 'lucide-react';
 
 // Static, Clean Phone Shell without 3D rotation or floating movement
@@ -22,7 +28,7 @@ function StaticPhoneShell({ children }) {
         {/* Dynamic Island Notch */}
         <div className="absolute top-5 left-1/2 -translate-x-1/2 w-28 h-4 bg-black rounded-full z-30 flex items-center justify-between px-3">
           <div className="w-2 h-2 rounded-full bg-gray-800"></div>
-          <div className="w-2.5 h-2.5 rounded-full bg-rose-500"></div>
+          <div className="w-2.5 h-2.5 rounded-full bg-emerald-500"></div>
         </div>
 
         {/* Screen content area */}
@@ -40,7 +46,7 @@ function CenterEmblem({ icon: Icon }) {
     <div className="flex flex-col items-center justify-center py-4 my-auto">
       <div className="relative w-24 h-24 rounded-full bg-gradient-to-tr from-rose-500 to-pink-500 text-white flex flex-col items-center justify-center shadow-lg">
         <Icon className="w-8 h-8 mb-0.5" />
-        <span className="text-[10px] font-bold tracking-wider uppercase">Shakti</span>
+        <span className="text-[10px] font-bold tracking-wider uppercase">SHAKTI ONE</span>
       </div>
     </div>
   );
@@ -50,33 +56,37 @@ export default function AntigravityProductShowcase() {
   return (
     <div id="shakti-features" className="relative z-10 w-full py-16 space-y-28 sm:space-y-36">
       
-      {/* SECTION 1: Giant Manifesto Typography (Exact Match to Reference Screenshot 1) */}
+      {/* SECTION 1: Giant Manifesto Typography */}
       <section className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 text-left">
         <div className="max-w-4xl">
           <h2 className="text-3xl sm:text-5xl lg:text-[56px] font-normal text-gray-950 tracking-tight leading-[1.14] font-sans">
-            Shakti is our unified safety, guardian network & community commerce platform — protecting women, connecting families, and empowering local merchants in the AI-first era.
+            SHAKTI ONE is our universal safety, guardian network & community platform — protecting every citizen, connecting families, and empowering individuals.
             <span className="inline-block w-[3px] h-[0.9em] ml-2 align-middle bg-rose-500 animate-pulse rounded-full"></span>
           </h2>
         </div>
       </section>
 
       {/* ───────────────────────────────────────────────────────────
-          FEATURE 1 · Voice Control & AI Voice Sentinel
+          FEATURE 1 · AI Guard & Smart Fake Call + Live Tracking
           Layout: Clean Text Left · Static Phone Right
       ─────────────────────────────────────────────────────────── */}
-      <section id="voice-sentinel" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+      <section id="fake-call" className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="grid grid-cols-1 lg:grid-cols-12 gap-12 lg:gap-16 items-center">
           
-          {/* Left Text (Clean, no extra pill badge, no download button) */}
+          {/* Left Text */}
           <div className="lg:col-span-6 space-y-5 text-left">
             <h3 className="text-3xl sm:text-4xl lg:text-5xl font-normal text-gray-950 tracking-tight font-display">
-              Voice Control & Sentinel
+              AI Guard & Smart Fake Call
             </h3>
             <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Talk directly with Shakti's voice AI assistant or let acoustic listeners operate silently in the background. Speak <span className="font-semibold text-rose-600">"Help Shakti"</span> or <span className="font-semibold text-rose-600">"Bachao"</span> to trigger sub-2s emergency dispatch, even when your phone is locked inside your bag.
+              Walking alone at night or feeling unsafe in a cab? SHAKTI ONE's AI Night Guard triggers realistic incoming calls with interactive human voice conversation so you never appear alone. Simultaneously, AI Journey Tracking watches your route in real-time, alerts on unexpected diversions, and keeps guardians notified.
             </p>
             <div className="space-y-2.5 pt-2 text-xs sm:text-sm font-medium text-gray-700">
-              {['On-device voice recognition (triggers offline without data)', 'Acoustic distress pitch & scream frequency detection', 'Sub-2 second emergency dispatch to police & guardians'].map((pt, i) => (
+              {[
+                'Realistic AI incoming call with natural 2-way voice conversation',
+                'Live GPS route tracking with automatic anomaly & deviation alerts',
+                'Discreet 1-tap emergency dispatch to family & 112 police gateway'
+              ].map((pt, i) => (
                 <div key={i} className="flex items-center space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>{pt}</span>
@@ -88,38 +98,85 @@ export default function AntigravityProductShowcase() {
           {/* Right – Clean Static Phone Screen */}
           <div className="lg:col-span-6 flex justify-center">
             <StaticPhoneShell>
-              <div className="flex-1 bg-gradient-to-b from-rose-50/50 via-white to-pink-50/40 p-4 pt-10 flex flex-col justify-between text-gray-900">
+              <div className="flex-1 bg-gradient-to-b from-rose-50/40 via-white to-amber-50/30 p-4 pt-10 flex flex-col justify-between text-gray-900">
                 
                 {/* Header */}
                 <div className="flex items-center justify-between border-b border-gray-100 pb-2.5">
                   <div className="flex items-center space-x-1.5">
-                    <Mic className="w-3.5 h-3.5 text-rose-600" />
-                    <span className="text-xs font-semibold">Voice Sentinel</span>
+                    <PhoneIncoming className="w-3.5 h-3.5 text-rose-600" />
+                    <span className="text-xs font-semibold">AI Night Guard</span>
                   </div>
-                  <span className="text-[10px] bg-rose-50 text-rose-700 font-semibold px-2 py-0.5 rounded-full border border-rose-200/60">AI Listening</span>
+                  <span className="text-[10px] bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-full border border-emerald-200/60 flex items-center space-x-1">
+                    <span className="w-1.5 h-1.5 rounded-full bg-emerald-500 animate-pulse"></span>
+                    <span>Call Connected (01:24)</span>
+                  </span>
                 </div>
 
-                {/* Waveform */}
-                <div className="bg-white rounded-2xl p-3 border border-gray-100 space-y-2 text-center shadow-xs">
-                  <span className="text-[10px] font-mono text-gray-400 uppercase tracking-wider">Listening: "Help Shakti"</span>
-                  <div className="flex items-center justify-center space-x-1 h-10">
-                    {[40, 70, 95, 60, 100, 85, 45, 90, 75, 50].map((h, i) => (
-                      <div key={i} className="w-1.5 bg-gradient-to-t from-rose-400 to-pink-500 rounded-full" style={{ height: `${h}%` }}></div>
+                {/* Call Simulation Card */}
+                <div className="bg-white rounded-2xl p-3 border border-gray-100 space-y-2 shadow-xs">
+                  <div className="flex items-center justify-between">
+                    <div className="flex items-center space-x-2">
+                      <div className="w-8 h-8 rounded-full bg-gradient-to-tr from-rose-500 to-amber-500 text-white flex items-center justify-center font-bold text-xs shadow-xs">
+                        P
+                      </div>
+                      <div className="text-left">
+                        <div className="text-xs font-bold text-gray-950">Papa (Dad)</div>
+                        <div className="text-[10px] text-gray-500">SHAKTI ONE AI Voice Companion</div>
+                      </div>
+                    </div>
+                    <Volume2 className="w-4 h-4 text-rose-600 animate-pulse" />
+                  </div>
+
+                  {/* AI Dialogue speech bubble */}
+                  <div className="bg-rose-50/80 rounded-xl p-2.5 text-[11px] text-gray-700 leading-snug border border-rose-100/60">
+                    <span className="font-semibold text-rose-700">AI: </span>
+                    "Haan beta, I'm waiting at the main gate. How far is your cab right now?"
+                  </div>
+
+                  {/* Voice waveform */}
+                  <div className="flex items-center justify-center space-x-1 h-5 pt-0.5">
+                    {[35, 65, 90, 50, 100, 75, 45, 80, 60, 30].map((h, i) => (
+                      <div key={i} className="w-1 bg-gradient-to-t from-rose-500 to-amber-500 rounded-full" style={{ height: `${h}%` }}></div>
                     ))}
                   </div>
-                  <div className="text-[10px] font-semibold text-rose-600 flex items-center justify-center space-x-1">
-                    <span className="w-1.5 h-1.5 rounded-full bg-rose-600 inline-block"></span>
-                    <span>Keyphrase → SOS Dispatching</span>
+                </div>
+
+                {/* Live Journey Location Tracker Card */}
+                <div className="bg-white rounded-2xl p-3 border border-gray-100 space-y-2 shadow-xs text-left">
+                  <div className="flex items-center justify-between text-xs">
+                    <div className="flex items-center space-x-1.5 font-bold text-gray-900">
+                      <Navigation className="w-3.5 h-3.5 text-blue-600" />
+                      <span>Live Journey Tracking</span>
+                    </div>
+                    <span className="text-[10px] bg-blue-50 text-blue-700 px-2 py-0.5 rounded-full font-mono font-medium">Safe Route</span>
+                  </div>
+
+                  {/* Route visual snippet */}
+                  <div className="relative bg-slate-50 rounded-xl p-2.5 border border-slate-100 flex items-center justify-between text-[11px]">
+                    <div className="space-y-0.5">
+                      <div className="flex items-center space-x-1.5 font-medium text-gray-800">
+                        <span className="w-2 h-2 rounded-full bg-emerald-500"></span>
+                        <span>Metro Station → Home</span>
+                      </div>
+                      <div className="text-[10px] text-gray-500 pl-3.5">
+                        ETA 6 min • Speed: 32 km/h
+                      </div>
+                    </div>
+                    <div className="text-right">
+                      <span className="text-[10px] font-bold text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded-md border border-emerald-200/60">
+                        GPS Locked
+                      </span>
+                    </div>
                   </div>
                 </div>
 
-                {/* Center Emblem */}
-                <CenterEmblem icon={ShieldAlert} />
-
-                {/* Footer */}
+                {/* Footer Controls */}
                 <div className="p-2.5 bg-gray-50 rounded-xl border border-gray-100 text-[10px] text-gray-600 font-medium flex items-center justify-between">
-                  <span>256-bit Encrypted Audio Vault</span>
-                  <span className="text-emerald-600 font-semibold">Armed</span>
+                  <span className="flex items-center space-x-1">
+                    <ShieldCheck className="w-3.5 h-3.5 text-emerald-600" />
+                    <span>Route Deviation Guard: Armed</span>
+                  </span>
+                  <span className="text-rose-600 font-semibold cursor-pointer">Stealth SOS</span>
                 </div>
 
               </div>
@@ -209,10 +266,10 @@ export default function AntigravityProductShowcase() {
               Safe Social Hub
             </h3>
             <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Connect with ID-verified women, campus peers, and nearby safe havens. Coordinate walk-together group commutes, stay informed with neighborhood safety alerts, and chat in a 100% verified space.
+              Connect with ID-verified citizens, students, night commuters, and nearby safe havens. Coordinate walk-together group commutes, stay informed with neighborhood safety alerts, and chat in a 100% verified space.
             </p>
             <div className="space-y-2.5 pt-2 text-xs sm:text-sm font-medium text-gray-700">
-              {['Aadhaar & ID-verified women safety community circles', 'Walk-with-me group commute organizer', 'Real-time neighborhood safety alerts & map pins'].map((pt, i) => (
+              {['Aadhaar & ID-verified community safety circles', 'Walk-with-me group commute organizer', 'Real-time neighborhood safety alerts & map pins'].map((pt, i) => (
                 <div key={i} className="flex items-center space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0" />
                   <span>{pt}</span>
@@ -229,7 +286,7 @@ export default function AntigravityProductShowcase() {
                 <div className="flex items-center justify-between border-b border-gray-100 pb-2.5">
                   <div className="flex items-center space-x-1.5">
                     <Users className="w-3.5 h-3.5 text-emerald-600" />
-                    <span className="text-xs font-semibold">Delhi Women Hub</span>
+                    <span className="text-xs font-semibold">Delhi Safe Hub</span>
                   </div>
                   <span className="text-[10px] bg-emerald-50 text-emerald-700 font-semibold px-2 py-0.5 rounded-full border border-emerald-200/60">100% Verified</span>
                 </div>
@@ -247,7 +304,7 @@ export default function AntigravityProductShowcase() {
                       <span>Priya (Guardian)</span>
                       <span className="text-[9px] text-emerald-700">10:43 PM</span>
                     </div>
-                    <p className="text-[11px] text-emerald-950 font-medium">I'm at Exit 2! Shakti Corridor Active ✓</p>
+                    <p className="text-[11px] text-emerald-950 font-medium">I'm at Exit 2! SHAKTI ONE Corridor Active ✓</p>
                   </div>
                 </div>
 
@@ -279,10 +336,10 @@ export default function AntigravityProductShowcase() {
               Make Friends & Elevate Yourself
             </h3>
             <p className="text-base sm:text-lg text-gray-600 font-normal leading-relaxed">
-              Empower yourself every single day. Build safe local friendships, participate in women empowerment workshops, complete self-defense modules, and track your personal safety index.
+              Empower yourself every single day. Build safe local friendships, participate in safety and situational awareness workshops, complete self-defense modules, and track your personal safety index.
             </p>
             <div className="space-y-2.5 pt-2 text-xs sm:text-sm font-medium text-gray-700">
-              {['Interactive self-defense & crisis management courses', 'Personal Safety Readiness Score & daily check-ins', 'Verified local sisterhood circles & confidence workshops'].map((pt, i) => (
+              {['Interactive self-defense & crisis management courses', 'Personal Safety Readiness Score & daily check-ins', 'Verified local community circles & awareness workshops'].map((pt, i) => (
                 <div key={i} className="flex items-center space-x-2.5">
                   <CheckCircle2 className="w-4 h-4 text-purple-600 shrink-0" />
                   <span>{pt}</span>

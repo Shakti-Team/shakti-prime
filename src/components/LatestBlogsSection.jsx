@@ -4,7 +4,7 @@ export default function LatestBlogsSection({ onOpenPrivacy }) {
   const blogs = [
     {
       id: 1,
-      title: 'Shakti Anywhere with Remote Guardian Control',
+      title: 'SHAKTI ONE Anywhere with Remote Guardian Control',
       date: 'Aug 21, 2026',
       tag: 'Product',
       mockupType: 'phone',
@@ -12,23 +12,23 @@ export default function LatestBlogsSection({ onOpenPrivacy }) {
     },
     {
       id: 2,
-      title: 'Bringing Shakti to Gemini Enterprise: Agentic safety workflows for every campus',
+      title: 'Bringing SHAKTI ONE to Gemini Enterprise: Agentic safety workflows for every campus',
       date: 'Aug 20, 2026',
       tag: 'Enterprise',
       mockupType: 'enterprise',
-      subtext: 'Shakti in Gemini Enterprise'
+      subtext: 'SHAKTI ONE in Gemini Enterprise'
     },
     {
       id: 3,
-      title: 'Introducing Shakti IDE & Autonomous Sentinel Extensions',
+      title: 'Introducing SHAKTI ONE IDE & Autonomous Sentinel Extensions',
       date: 'Aug 18, 2026',
       tag: 'Product',
       mockupType: 'extension',
-      subtext: 'Shakti Extensions'
+      subtext: 'SHAKTI ONE Extensions'
     },
     {
       id: 4,
-      title: 'Gemini 3.7 Flash in Shakti Autonomous Telemetry Platform',
+      title: 'Gemini 3.7 Flash in SHAKTI ONE Autonomous Telemetry Platform',
       date: 'Aug 13, 2026',
       tag: 'Model',
       mockupType: 'model',
@@ -91,7 +91,7 @@ export default function LatestBlogsSection({ onOpenPrivacy }) {
                   <div className="flex flex-col items-center justify-center space-y-3 text-center w-full px-2">
                     <span className="text-xs font-medium text-gray-300 tracking-tight">{blog.subtext}</span>
                     <div className="w-full bg-[#161F30] rounded-lg p-2 border border-gray-700 text-[9px] text-gray-300 font-mono text-left">
-                      <span className="text-rose-400">⚡ Shakti 2.0 Mesh</span>
+                      <span className="text-rose-400">⚡ SHAKTI ONE 2.0 Mesh</span>
                     </div>
                   </div>
                 )}

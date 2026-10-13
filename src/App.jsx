@@ -8,11 +8,10 @@ import PrivacyModal from './components/PrivacyModal';
 // Dedicated Pages
 import HomePage from './pages/HomePage';
 import ProductsPage from './pages/ProductsPage';
-import PricingPage from './pages/PricingPage';
 import EnterprisePage from './pages/EnterprisePage';
 
 export default function App() {
-  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'products' | 'pricing' | 'enterprise'
+  const [currentPage, setCurrentPage] = useState('home'); // 'home' | 'products' | 'enterprise'
   const [downloadModalOpen, setDownloadModalOpen] = useState(false);
   const [videoModalOpen, setVideoModalOpen] = useState(false);
   const [privacyModalOpen, setPrivacyModalOpen] = useState(false);
@@ -20,7 +19,7 @@ export default function App() {
   useEffect(() => {
     const handleHashChange = () => {
       const hash = window.location.hash.replace('#', '');
-      if (['home', 'products', 'pricing', 'enterprise'].includes(hash)) {
+      if (['home', 'products', 'enterprise'].includes(hash)) {
         setCurrentPage(hash);
       }
     };
@@ -52,7 +51,6 @@ export default function App() {
           <HomePage 
             onOpenDownload={() => setDownloadModalOpen(true)}
             onOpenVideo={() => setVideoModalOpen(true)}
-            onNavigatePricing={() => handlePageChange('pricing')}
             onNavigateProducts={() => handlePageChange('products')}
             onNavigateEnterprise={() => handlePageChange('enterprise')}
             onOpenPrivacy={() => setPrivacyModalOpen(true)}
@@ -61,13 +59,6 @@ export default function App() {
 
         {currentPage === 'products' && (
           <ProductsPage 
-            onOpenDownload={() => setDownloadModalOpen(true)}
-            onNavigatePricing={() => handlePageChange('pricing')}
-          />
-        )}
-
-        {currentPage === 'pricing' && (
-          <PricingPage 
             onOpenDownload={() => setDownloadModalOpen(true)}
           />
         )}

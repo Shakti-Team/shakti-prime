@@ -33,7 +33,7 @@ export default function CtaBanner({ onOpenDownload }) {
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg text-pink-100 max-w-2xl mx-auto leading-relaxed">
-              Join thousands of students, working professionals, and solo travelers who trust Shakti for intelligent safe navigation, voice SOS triggers, and autonomous guardian response.
+              Join thousands of students, working professionals, and solo travelers who trust SHAKTI ONE for intelligent safe navigation, voice SOS triggers, and autonomous guardian response.
             </p>
 
             {/* Actions */}
@@ -43,7 +43,7 @@ export default function CtaBanner({ onOpenDownload }) {
                 className="group flex items-center space-x-3 bg-white hover:bg-rose-50 text-gray-950 px-8 py-4 rounded-full font-extrabold text-base shadow-xl hover:shadow-2xl hover:scale-105 active:scale-95 transition-all duration-200"
               >
                 <Download className="w-5 h-5 text-rose-600" />
-                <span>Get Shakti App Free</span>
+                <span>Get SHAKTI ONE App Free</span>
               </button>
 
               <button
@@ -59,7 +59,7 @@ export default function CtaBanner({ onOpenDownload }) {
             <div className="pt-8 border-t border-white/20 flex flex-wrap items-center justify-center gap-6 sm:gap-10 text-xs font-semibold text-pink-100">
               <span className="flex items-center space-x-1.5">
                 <CheckCircle2 className="w-4 h-4 text-emerald-300" />
-                <span>100% Free Core Emergency SOS</span>
+                <span>Universal Core Emergency SOS</span>
               </span>
               <span className="flex items-center space-x-1.5">
                 <Lock className="w-4 h-4 text-emerald-300" />

@@ -89,10 +89,10 @@ export default function LiveSafetySimulator() {
             <span>Interactive Live Simulator</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-950 tracking-tight">
-            Test Shakti's Real-Time Engine in Action
+            Test SHAKTI ONE's Real-Time Engine in Action
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-            Experience how fast Shakti reacts when an emergency is detected. Run a live test of our instant SOS trigger, hands-free voice agent, and fake call generator.
+            Experience how fast SHAKTI ONE reacts when an emergency is detected. Run a live test of our instant SOS trigger, hands-free voice agent, and fake call generator.
           </p>
 
           {/* Selector Tabs */}
@@ -233,7 +233,7 @@ export default function LiveSafetySimulator() {
               <div className="flex items-center justify-between border-b border-gray-800 pb-2 text-[11px] text-gray-500">
                 <span className="flex items-center space-x-1.5">
                   <span className="w-2 h-2 rounded-full bg-emerald-500 animate-ping"></span>
-                  <span>SHAKTI TELEMETRY STREAM</span>
+                  <span>SHAKTI ONE TELEMETRY STREAM</span>
                 </span>
                 <span>LATENCY: 18ms</span>
               </div>

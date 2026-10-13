@@ -31,7 +31,7 @@ export default function FeaturesGrid({ onTestFakeCall }) {
             Engineered with Precision for Rapid Protection
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-            Every module in Shakti is engineered to eliminate delay when seconds matter most—from hands-free acoustic voice analysis to automated multi-guardian mesh dispatch.
+            Every module in SHAKTI ONE is engineered to eliminate delay when seconds matter most—from hands-free acoustic voice analysis to automated multi-guardian mesh dispatch.
           </p>
         </div>
 
@@ -52,7 +52,7 @@ export default function FeaturesGrid({ onTestFakeCall }) {
                 <span>PARALLEL GUARDIAN MESH</span>
               </div>
               <h3 className="text-2xl font-bold text-gray-900 mb-3">
-                Shakti Command Center
+                SHAKTI ONE Command Center
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
                 Manage live location broadcasting, trusted emergency circles, battery telemetry, and safe arrival pings in parallel without draining device resources.
@@ -221,7 +221,7 @@ export default function FeaturesGrid({ onTestFakeCall }) {
                 Offline Bluetooth Mesh SOS
               </h3>
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                No 4G or 5G cellular reception? Shakti relays encrypted distress tokens peer-to-peer via Bluetooth Low Energy mesh nodes until an active gateway is found.
+                No 4G or 5G cellular reception? SHAKTI ONE relays encrypted distress tokens peer-to-peer via Bluetooth Low Energy mesh nodes until an active gateway is found.
               </p>
 
               <div className="bg-blue-50/50 rounded-2xl p-3 border border-blue-100 text-xs font-mono text-gray-700 flex items-center justify-between">

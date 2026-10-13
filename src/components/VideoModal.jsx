@@ -45,12 +45,14 @@ export default function VideoModal({ isOpen, onClose }) {
         
         {/* Modal Header */}
         <div className="flex items-center justify-between px-6 py-4 border-b border-gray-800 bg-[#0B101D]">
-          <div className="flex items-center space-x-2.5">
-            <div className="w-7 h-7 rounded-lg bg-rose-600 flex items-center justify-center text-white">
-              <Play className="w-3.5 h-3.5 fill-current" />
-            </div>
+          <div className="flex items-center space-x-3">
+            <img 
+              src="/app_logo.png" 
+              alt="SHAKTI ONE" 
+              className="w-8 h-8 object-contain shrink-0 drop-shadow-xs" 
+            />
             <div>
-              <h3 className="text-sm font-bold font-display">Shakti Autonomous Sentinel — Emergency Protocol Walkthrough</h3>
+              <h3 className="text-sm font-bold font-display">SHAKTI ONE Autonomous Sentinel — Emergency Protocol Walkthrough</h3>
               <p className="text-xs text-gray-400">Live operational demo & background telemetry showcase</p>
             </div>
           </div>

@@ -24,16 +24,28 @@ export default function DownloadModal({ isOpen, onClose }) {
           <X className="w-5 h-5" />
         </button>
 
-        {/* Brand Tag */}
-        <div className="flex items-center space-x-2 text-xs font-semibold uppercase tracking-wider text-rose-600 bg-rose-50 px-3 py-1 rounded-full border border-rose-200 w-fit mb-3">
-          <Sparkles className="w-3.5 h-3.5" />
-          <span>Shakti App v2.4.0</span>
+        {/* Brand Header with Logo */}
+        <div className="flex items-center space-x-3.5 mb-4">
+          <img 
+            src="/app_logo.png" 
+            alt="SHAKTI ONE" 
+            className="w-12 h-12 object-contain drop-shadow-sm shrink-0" 
+            onError={(e) => {
+              e.target.onerror = null;
+              e.target.src = '/shield.svg';
+            }}
+          />
+          <div>
+            <div className="flex items-center space-x-1.5 text-[10px] font-bold uppercase tracking-wider text-rose-600 bg-rose-50 px-2.5 py-0.5 rounded-full border border-rose-200 w-fit mb-1">
+              <Sparkles className="w-3 h-3" />
+              <span>SHAKTI ONE v2.4.0</span>
+            </div>
+            <h3 className="text-xl sm:text-2xl font-bold font-display text-gray-950 leading-tight">
+              Get SHAKTI ONE Protection
+            </h3>
+          </div>
         </div>
-
-        <h3 className="text-2xl font-bold font-display text-gray-950">
-          Get Shakti Protection on Mobile
-        </h3>
-        <p className="text-sm text-gray-600 mt-1 mb-6">
+        <p className="text-sm text-gray-600 mb-6">
           Scan the QR code or choose your mobile platform for instant free installation.
         </p>
 
@@ -73,9 +85,9 @@ export default function DownloadModal({ isOpen, onClose }) {
               <circle cx="75" cy="85" r="3" />
             </svg>
             <div className="absolute inset-0 flex items-center justify-center pointer-events-none">
-              <span className="w-5 h-5 bg-white rounded-full flex items-center justify-center shadow-xs">
-                <span className="w-2.5 h-2.5 bg-rose-600 rounded-full"></span>
-              </span>
+              <div className="w-7 h-7 bg-white rounded-lg flex items-center justify-center shadow-md p-0.5 border border-gray-200">
+                <img src="/app_logo.png" alt="SHAKTI ONE" className="w-full h-full object-contain" />
+              </div>
             </div>
           </div>
 
@@ -85,7 +97,7 @@ export default function DownloadModal({ isOpen, onClose }) {
               <span>Instant Camera Scan</span>
             </div>
             <p className="text-xs text-gray-600 leading-relaxed">
-              Open your phone camera to scan and auto-install Shakti APK or App Store packages directly.
+              Open your phone camera to scan and auto-install SHAKTI ONE APK or App Store packages directly.
             </p>
             <div className="text-[11px] font-mono text-emerald-700 bg-emerald-50 px-2 py-0.5 rounded inline-block">
               Auto-verified SHA256 Signature

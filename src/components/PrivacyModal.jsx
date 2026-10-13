@@ -19,11 +19,13 @@ export default function PrivacyModal({ isOpen, onClose }) {
         {/* Header */}
         <div className="flex items-center justify-between px-6 py-5 border-b border-gray-200 bg-gray-50/80">
           <div className="flex items-center space-x-3">
-            <div className="w-8 h-8 rounded-xl bg-emerald-100 text-emerald-700 flex items-center justify-center font-bold">
-              <Lock className="w-4 h-4" />
-            </div>
+            <img 
+              src="/app_logo.png" 
+              alt="SHAKTI ONE" 
+              className="w-9 h-9 object-contain shrink-0 drop-shadow-xs" 
+            />
             <div>
-              <h3 className="text-base font-bold font-display">Shakti Privacy & Zero-Knowledge Trust Policy</h3>
+              <h3 className="text-base font-bold font-display">SHAKTI ONE Privacy & Zero-Knowledge Trust Policy</h3>
               <p className="text-xs text-gray-500">Last updated: February 2026 • Verified Compliance</p>
             </div>
           </div>
@@ -63,7 +65,7 @@ export default function PrivacyModal({ isOpen, onClose }) {
               <span>2. Acoustic Voice Model & Microphone Access</span>
             </h4>
             <p>
-              Shakti runs a lightweight neural keyword detector directly on your device NPU. No ambient audio is recorded, buffered, or transmitted to cloud servers during standby. Audio recording is initiated solely when an active SOS protocol is verified.
+              SHAKTI ONE runs a lightweight neural keyword detector directly on your device NPU. No ambient audio is recorded, buffered, or transmitted to cloud servers during standby. Audio recording is initiated solely when an active SOS protocol is verified.
             </p>
           </div>
 

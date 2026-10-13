@@ -77,7 +77,7 @@ export default function UseCasesSection({ onOpenDownload }) {
       label: 'Enterprise & Shift Workers',
       icon: Building2,
       title: 'Corporate Employee Safety & BPO Shift Mobility',
-      description: 'Enterprises and organizations integrate Shakti to safeguard night-shift personnel, healthcare professionals, and remote field staff with central safety dashboards.',
+      description: 'Enterprises and organizations integrate SHAKTI ONE to safeguard night-shift personnel, healthcare professionals, and remote field staff with central safety dashboards.',
       metrics: [
         { label: 'Enterprise Uptime', value: '99.99%' },
         { label: 'Audit Compliance', value: 'SOC-2 Ready' },
@@ -109,7 +109,7 @@ export default function UseCasesSection({ onOpenDownload }) {
             Designed for Real People in Real Situations
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600">
-            From university campus walks to late night rideshares and solo expeditions, Shakti adapts to every lifestyle.
+            From university campus walks to late night rideshares and solo expeditions, SHAKTI ONE adapts to every lifestyle.
           </p>
         </div>
 

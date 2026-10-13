@@ -25,7 +25,7 @@ export default function EnterpriseAdsSection() {
         <div className="max-w-3xl mx-auto text-center mb-14 sm:mb-16">
           <div className="inline-flex items-center space-x-2 text-xs font-bold uppercase tracking-wider text-rose-700 bg-rose-50 px-4 py-1.5 rounded-full border border-rose-200 mb-4 shadow-xs">
             <Store className="w-3.5 h-3.5 text-rose-600" />
-            <span>Shakti Prime Partner & Enterprise</span>
+            <span>SHAKTI ONE Prime Partner & Enterprise</span>
           </div>
 
           <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-950 tracking-tight font-display">
@@ -33,7 +33,7 @@ export default function EnterpriseAdsSection() {
           </h2>
 
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-            Local boutiques, restaurants, brands, and corporate fleets can partner with Shakti to list shops, publish deal posts with direct WhatsApp orders, offer Safe Havens, and launch city-wide spotlight banners.
+            Local boutiques, restaurants, brands, and corporate fleets can partner with SHAKTI ONE to list shops, publish deal posts with direct WhatsApp orders, offer Safe Havens, and launch city-wide spotlight banners.
           </p>
         </div>
 
@@ -53,11 +53,11 @@ export default function EnterpriseAdsSection() {
               </div>
 
               <h3 className="text-2xl font-bold text-gray-900 mb-3 font-display">
-                Shakti Prime Partner for Shops & Cafes
+                SHAKTI ONE Prime Partner for Shops & Cafes
               </h3>
 
               <p className="text-sm text-gray-600 leading-relaxed mb-6">
-                List your clothing boutique, salon, cafe, or store on the Shakti Community Hub. Post daily product offers with discount badges and let customers order with 1-tap WhatsApp chat.
+                List your clothing boutique, salon, cafe, or store on the SHAKTI ONE Community Hub. Post daily product offers with discount badges and let customers order with 1-tap WhatsApp chat.
               </p>
 
               <div className="space-y-3 mb-6">
@@ -67,7 +67,7 @@ export default function EnterpriseAdsSection() {
                 </div>
                 <div className="flex items-start space-x-2.5 text-xs sm:text-sm font-semibold text-gray-800">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <span>Post unlimited product deal cards, prices & redeem Shakti Coins</span>
+                  <span>Post unlimited product deal cards, prices & redeem SHAKTI ONE Coins</span>
                 </div>
                 <div className="flex items-start space-x-2.5 text-xs sm:text-sm font-semibold text-gray-800">
                   <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
@@ -133,7 +133,7 @@ export default function EnterpriseAdsSection() {
           </div>
 
           <h3 className="text-2xl sm:text-4xl font-extrabold font-display">
-            Partner with Shakti as a Merchant or Sponsor
+            Partner with SHAKTI ONE as a Merchant or Sponsor
           </h3>
 
           <p className="text-sm sm:text-base text-pink-100 max-w-xl mx-auto leading-relaxed">
@@ -142,7 +142,7 @@ export default function EnterpriseAdsSection() {
 
           <div className="pt-2 flex flex-wrap items-center justify-center gap-4">
             <a
-              href="mailto:enterprise@shaktiapp.in?subject=Shakti%20Prime%20Merchant%20%26%20Partnership%20Inquiry"
+              href="mailto:enterprise@shaktiapp.in?subject=SHAKTI%20ONE%20Prime%20Merchant%20%26%20Partnership%20Inquiry"
               className="bg-white text-rose-700 hover:bg-rose-50 px-8 py-4 rounded-full font-bold text-sm sm:text-base shadow-md hover:scale-105 transition-all flex items-center space-x-2.5"
             >
               <Mail className="w-4.5 h-4.5" />

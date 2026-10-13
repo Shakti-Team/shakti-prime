@@ -15,9 +15,9 @@ export default function RolesSection({ onOpenDownload }) {
 
   const roles = [
     {
-      id: 'women',
-      title: 'Women & Commuters',
-      subtitle: 'Primary User Protection',
+      id: 'citizens',
+      title: 'Citizens & Commuters',
+      subtitle: 'Universal Personal Protection',
       badge: 'Core Platform',
       icon: Heart,
       color: 'rose',
@@ -29,7 +29,7 @@ export default function RolesSection({ onOpenDownload }) {
         'AI Fake Call generator to exit uncomfortable situations',
         'Zero-knowledge encrypted cloud evidence backup'
       ],
-      quote: '"I feel secure walking back from the metro at night knowing my guardians and emergency services have my back in under 2 seconds."'
+      quote: '"I feel secure walking back from transit or late shifts knowing my guardians and emergency services have my back in under 2 seconds."'
     },
     {
       id: 'guardians',
@@ -56,14 +56,14 @@ export default function RolesSection({ onOpenDownload }) {
       icon: Shield,
       color: 'emerald',
       description:
-        'When an emergency occurs, Shakti immediately relays precise GPS coordinates and emergency voice beacons to the nearest verified community volunteers and police control rooms.',
+        'When an emergency occurs, SHAKTI ONE immediately relays precise GPS coordinates and emergency voice beacons to the nearest verified community volunteers and police control rooms.',
       features: [
         'Sub-2s Direct Dispatch to Local Emergency 112 Gateway',
         'Nearby Verified Citizen Volunteer Mesh Response',
         'Live Audio Clip & Exact Pinpoint Location Relay',
         'Offline SMS & Bluetooth Beacon Fallback'
       ],
-      quote: '"Shakti provides first responders with verified location and vital context before reaching the scene, saving crucial minutes."'
+      quote: '"SHAKTI ONE provides first responders with verified location and vital context before reaching the scene, saving crucial minutes."'
     },
     {
       id: 'enterprises',
@@ -73,14 +73,14 @@ export default function RolesSection({ onOpenDownload }) {
       icon: Building2,
       color: 'blue',
       description:
-        'Companies and universities deploy Shakti for late-night female employee cab transport safety and campus safe walks, while verified partner brands can run contextual safety awareness banners.',
+        'Companies and universities deploy SHAKTI ONE for late-night employee and female cab transport safety and campus safe walks, while verified partner brands can run contextual safety awareness banners.',
       features: [
         'Corporate Fleet & Cab Commute Real-Time Dashboard',
         'Campus Geo-Fenced Safe Zones for Students & Faculty',
         'Verified In-App Safety Sponsor Banner Marketplace',
         'Compliance & Safety Duty of Care Auditing'
       ],
-      quote: '"We integrated Shakti for all our late-shift employees. It increased safety compliance and gave our team immense confidence."'
+      quote: '"We integrated SHAKTI ONE for all our late-shift employees. It increased safety compliance and gave our team immense confidence."'
     }
   ];
 
@@ -98,10 +98,10 @@ export default function RolesSection({ onOpenDownload }) {
             <span>Connected Safety Ecosystem</span>
           </div>
           <h2 className="text-3xl sm:text-5xl font-extrabold text-gray-950 tracking-tight">
-            How Every Role Connects in Shakti
+            How Every Role Connects in SHAKTI ONE
           </h2>
           <p className="mt-4 text-base sm:text-lg text-gray-600 leading-relaxed">
-            A cohesive 360-degree network bringing together women, family guardians, first responders, and enterprise organizations in real-time.
+            A cohesive 360-degree network bringing together individuals, students, seniors, family guardians, and first responders in real-time.
           </p>
         </div>
 
@@ -178,7 +178,7 @@ export default function RolesSection({ onOpenDownload }) {
                   onClick={onOpenDownload}
                   className="inline-flex items-center space-x-2 bg-gradient-to-r from-rose-600 to-pink-600 text-white px-5 py-2.5 rounded-full text-xs font-bold shadow-md hover:shadow-rose-500/25 transition-all hover:scale-105"
                 >
-                  <span>Experience this in Shakti App</span>
+                  <span>Experience this in SHAKTI ONE App</span>
                   <ArrowRight className="w-3.5 h-3.5" />
                 </button>
               </div>
@@ -190,7 +190,7 @@ export default function RolesSection({ onOpenDownload }) {
                 <div className="w-12 h-12 rounded-2xl bg-white shadow-xs border border-pink-100 p-1 flex items-center justify-center">
                   <img 
                     src="/app_logo.png" 
-                    alt="Shakti" 
+                    alt="SHAKTI ONE" 
                     className="w-full h-full object-cover rounded-xl"
                     onError={(e) => {
                       e.target.onerror = null;
